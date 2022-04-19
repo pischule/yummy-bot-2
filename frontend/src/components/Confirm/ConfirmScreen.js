@@ -23,8 +23,12 @@ function ConfirmScreen(props) {
   };
 
   const handleClick = () => {
+    if (name == null) {
+      alert("Введите имя");
+      return;
+    }
     if (!isNameValid(name)) {
-      alert("Имя может содержать только кириллические символы");
+      alert("Имя может содержать только кириллицу");
       return;
     }
 
@@ -37,7 +41,8 @@ function ConfirmScreen(props) {
       const id = params.id;
 
       if (id === null || id === undefined) {
-        alert("Ошибка авторизации");
+        setPressed(false);
+        alert("Ошибка авторизации. Попробуйте снова перейти по кнопке в чате");
         return;
       }
 
