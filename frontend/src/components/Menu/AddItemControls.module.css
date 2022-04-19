@@ -1,0 +1,28 @@
+.add-button {
+  width: 8rem;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.pm-button {
+  width: 4rem;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.button {
+  background-color: var(--button-color);
+  border: none;
+  border: 0%;
+  padding: 0%;
+  color: white;
+  border-radius: 0.5rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    background-color: var(--button-hover-color);
+  }
+}
