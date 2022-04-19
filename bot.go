@@ -46,6 +46,18 @@ func onRects(c tele.Context) error {
 }
 
 func onPhoto(c tele.Context) error {
+	senderId := c.Message().Sender.ID
+	if senderId != cfg.YummyId && senderId != cfg.AdminId {
+		return nil
+	}
+
+	minskHour := time.Now().In(time.FixedZone("Europe/Minsk", 3*60*60)).Hour()
+	fmt.Println(minskHour)
+	if senderId != cfg.AdminId && (minskHour < 9 || minskHour > 12) {
+		log.Println("photo not in time")
+		return nil
+	}
+
 	photo := c.Message().Photo
 
 	reader, err := bot.File(&photo.File)
@@ -100,6 +112,11 @@ func onPhoto(c tele.Context) error {
 }
 
 func onText(c tele.Context) error {
+	senderId := c.Message().Sender.ID
+	if senderId != cfg.YummyId && senderId != cfg.AdminId {
+		return nil
+	}
+
 	r := regexp.MustCompile(`.*?[Мм]еню на.*?(\d{1,2}\.\d{1,2}\.\d{2,4}).*`)
 	m := r.FindStringSubmatch(c.Message().Text)
 	if len(m) != 2 {
@@ -201,9 +218,9 @@ func RunBot(config BotConfig) {
 	adminOnly.Use(middleware.Whitelist(config.AdminId))
 	adminOnly.Handle("/rects", onRects)
 	adminOnly.Handle("/menu", onMenu)
-	adminOnly.Handle(tele.OnPhoto, onPhoto)
 
 	b.Handle(tele.OnText, onText)
+	b.Handle(tele.OnPhoto, onPhoto)
 
 	b.Start()
 }

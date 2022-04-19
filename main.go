@@ -19,8 +19,9 @@ func main() {
 	cfg.AdminId, _ = strconv.ParseInt(os.Getenv("ADMIN_ID"), 10, 64)
 	cfg.YummyId, _ = strconv.ParseInt(os.Getenv("YUMMY_ID"), 10, 64)
 	cfg.GroupId, _ = strconv.ParseInt(os.Getenv("GROUP_ID"), 10, 64)
+	debug := os.Getenv("DEBUG") == "true"
 
 	InitDb()
-	go RunWeb()
+	go RunWeb(debug)
 	RunBot(cfg)
 }

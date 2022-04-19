@@ -7,21 +7,19 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// func CORSMiddleware() gin.HandlerFunc {
-// 	return func(c *gin.Context) {
-// 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
-// 		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
-// 		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
-// 		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT, DELETE")
-
-// 		if c.Request.Method == "OPTIONS" {
-// 			c.AbortWithStatus(204)
-// 			return
-// 		}
-
-// 		c.Next()
-// 	}
-// }
+func CORSMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT, DELETE")
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(204)
+			return
+		}
+		c.Next()
+	}
+}
 
 type OrderRequest struct {
 	UserId int64       `json:"userId"`
@@ -34,12 +32,14 @@ type OrderItem struct {
 	Quantity int    `json:"quantity"`
 }
 
-func RunWeb() {
+func RunWeb(debug bool) {
 
 	gin.SetMode(gin.ReleaseMode)
 
 	r := gin.Default()
-	// r.Use(CORSMiddleware())
+	if debug {
+		r.Use(CORSMiddleware())
+	}
 	r.GET("/menu", func(c *gin.Context) {
 		menu, err := GetMenu(Today())
 		if err != nil || menu.Items == "" {
