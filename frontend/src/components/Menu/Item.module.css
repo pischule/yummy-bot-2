@@ -19,13 +19,14 @@
     height: 0.4rem;
     padding: 10px;
     margin-right: 10px;
-    background-color: #e9b830;
+    background-color: #5e0064;
     border-radius: 50%;
     color: white;
     font-size: 0.8rem;
     text-align: center;
     font-weight: bold;
     align-items: center;
+    margin-left: 2px;
 
     display: flex; /* or inline-flex */
     align-items: center; 
