@@ -23,7 +23,7 @@ frontend/npm-debug.log*
 frontend/yarn-debug.log*
 frontend/yarn-error.log*
 
-DS_Store
+.DS_Store
 
 .env
 db.sqlite
