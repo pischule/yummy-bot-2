@@ -43,7 +43,7 @@ func RunWeb(debug bool) {
 	r.GET("/menu", func(c *gin.Context) {
 		menu, err := GetMenu(Today())
 		if err != nil || menu.Items == "" {
-			c.JSON(404, gin.H{"error": "not found"})
+			c.JSON(404, gin.H{"error": "today's menu not found"})
 			return
 		}
 		var items = make([]string, 0)
