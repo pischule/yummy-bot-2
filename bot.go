@@ -51,7 +51,7 @@ func onPhoto(c tele.Context) error {
 		return nil
 	}
 
-	minskHour := time.Now().In(time.FixedZone("Europe/Minsk", 3*60*60)).Hour()
+	minskHour := GetMinskHour()
 	fmt.Println(minskHour)
 	if senderId != cfg.AdminId && (minskHour < 9 || minskHour > 12) {
 		log.Println("photo not in time")

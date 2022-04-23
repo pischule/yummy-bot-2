@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"log"
 	"time"
 
@@ -75,6 +76,10 @@ func SaveMenu(menu Menu) {
 
 func GetMenu(date time.Time) (Menu, error) {
 	var menu Menu
+	minskHour := GetMinskHour()
+	if minskHour >= 14 {
+		return menu, errors.New("menu not after 14")
+	}
 	if err := Db.Where("publish_date = ?", date).First(&menu).Error; err != nil {
 		return menu, err
 	}

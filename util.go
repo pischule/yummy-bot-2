@@ -42,6 +42,10 @@ func ValidateName(name string) (string, error) {
 	return trimmed, nil
 }
 
+func GetMinskHour() int {
+	return time.Now().In(time.FixedZone("Europe/Minsk", 3*60*60)).Hour()
+}
+
 func LocalizeWeekday(w time.Weekday) string {
 	ruWeekday := ""
 	switch w {
