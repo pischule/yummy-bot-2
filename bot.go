@@ -34,7 +34,7 @@ var (
 func onRects(c tele.Context) error {
 	payload := c.Message().Payload
 	if payload == "" {
-		return c.Send("https://pischule.github.io/yummy-bot/")
+		return c.Send(cfg.Domain + "/rects-tool")
 	}
 	var rects []FloatRect
 	if err := json.Unmarshal([]byte(payload), &rects); err != nil {

@@ -83,6 +83,8 @@ func RunWeb(debug bool) {
 	r.StaticFile("/logo192.png", "./frontend/build/logo192.png")
 	r.StaticFile("/logo512.png", "./frontend/build/logo512.png")
 
+	r.Static("/rects-tool", "./rects-tool")
+
 	if err := r.Run(); err != nil {
 		panic(err)
 	}
