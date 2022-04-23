@@ -5,7 +5,7 @@ import styles from "./ConfirmScreen.module.css";
 import LargeButton from "../UI/LargeButton";
 import Card from "../UI/Card";
 
-import { baseUrl } from "../../const";
+import { apiUrl } from "../../const";
 
 function ConfirmScreen(props) {
   const [name, setName] = useState(localStorage.getItem("name") || null);
@@ -46,7 +46,7 @@ function ConfirmScreen(props) {
         return;
       }
 
-      fetch(`${baseUrl}/order`, {
+      fetch(`${apiUrl}/order`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

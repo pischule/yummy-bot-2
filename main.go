@@ -19,6 +19,7 @@ func main() {
 	cfg.AdminId, _ = strconv.ParseInt(os.Getenv("ADMIN_ID"), 10, 64)
 	cfg.YummyId, _ = strconv.ParseInt(os.Getenv("YUMMY_ID"), 10, 64)
 	cfg.GroupId, _ = strconv.ParseInt(os.Getenv("GROUP_ID"), 10, 64)
+	cfg.OrderHourEnd, _ = strconv.Atoi(os.Getenv("ORDER_HOUR_END"))
 	debug := os.Getenv("DEBUG") == "true"
 
 	InitDb()

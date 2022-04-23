@@ -2,11 +2,12 @@ import styles from "./App.module.css";
 
 import { useState, useEffect } from "react";
 
-import { baseUrl } from "./const";
+import { apiUrl } from "./const";
 
 import MenuScreen from "./components/Menu/MenuScreen";
 import ConfirmScreen from "./components/Confirm/ConfirmScreen";
 import DoneScreen from "./components/DoneScreen/DoneScreen";
+import LoginScreen from "./components/Login/LoginScreen";
 
 function App() {
   const [screen, setScreen] = useState("menu");
@@ -14,7 +15,7 @@ function App() {
   const [title, setTitle] = useState("Меню не доступно");
 
   async function fetchData() {
-    const result = await fetch(`${baseUrl}/menu`);
+    const result = await fetch(`${apiUrl}/menu`);
     const json = await result.json();
     const itemsWithQuantity = json.items.map((item) => {
       return {
@@ -50,6 +51,18 @@ function App() {
   const switchToDone = () => {
     setScreen("done");
   };
+
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  const id = params.id;
+  if (id === null || id === undefined) {
+    return (
+      <div className={styles.app}>
+        <LoginScreen />
+      </div>
+    );
+  }
 
   const selectedItems = items.filter((item) => item.quantity > 0);
 

@@ -70,7 +70,7 @@ func RunWeb(debug bool) {
 		log.Println(order)
 		err := PostOrderInChat(order)
 		if err != nil {
-			c.JSON(403, gin.H{"error": err})
+			c.JSON(403, gin.H{"error": err.Error()})
 			return
 		}
 		c.JSON(200, gin.H{"message": "ok"})

@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"log"
@@ -16,11 +17,12 @@ import (
 )
 
 type BotConfig struct {
-	Token   string
-	AdminId int64
-	GroupId int64
-	YummyId int64
-	Domain  string
+	Token        string
+	AdminId      int64
+	GroupId      int64
+	YummyId      int64
+	Domain       string
+	OrderHourEnd int
 }
 
 var (
@@ -150,7 +152,12 @@ func PostOrderInChat(order OrderRequest) error {
 		tele.Member:        true,
 	}
 	if !allowedRoles[memberOf.Role] {
-		return nil
+		return errors.New("not allowed")
+	}
+
+	minskHour := GetMinskHour()
+	if minskHour >= cfg.OrderHourEnd {
+		return errors.New("too late")
 	}
 
 	var sb strings.Builder
