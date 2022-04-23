@@ -9,23 +9,24 @@ import ConfirmScreen from "./components/Confirm/ConfirmScreen";
 import DoneScreen from "./components/DoneScreen/DoneScreen";
 
 function App() {
-  const [screen, setScreen] = useState(0);
+  const [screen, setScreen] = useState("menu");
   const [items, setItems] = useState([]);
   const [title, setTitle] = useState("Меню не доступно");
 
+  async function fetchData() {
+    const result = await fetch(`${baseUrl}/menu`);
+    const json = await result.json();
+    const itemsWithQuantity = json.items.map((item) => {
+      return {
+        name: item,
+        quantity: 0,
+      };
+    });
+    setItems(itemsWithQuantity);
+    setTitle(json.title);
+  }
+
   useEffect(() => {
-    async function fetchData() {
-      const result = await fetch(`${baseUrl}/menu`);
-      const json = await result.json();
-      const itemsWithQuantity = json.items.map((item) => {
-        return {
-          name: item,
-          quantity: 0,
-        };
-      });
-      setItems(itemsWithQuantity);
-      setTitle(json.title);
-    }
     fetchData();
   }, []);
 
@@ -40,32 +41,32 @@ function App() {
   };
 
   const switchToConfirem = () => {
-    const newItems = items.filter((item) => item.quantity > 0);
-    if (newItems.length > 0) {
-      setScreen(1);
+    const selectedItems = items.filter((item) => item.quantity > 0);
+    if (selectedItems.length > 0) {
+      setScreen("confirm");
     }
   };
 
   const switchToDone = () => {
-    setScreen(2);
+    setScreen("done");
   };
 
-  const orderedItems = items.filter((item) => item.quantity > 0);
+  const selectedItems = items.filter((item) => item.quantity > 0);
 
   return (
     <div className={styles.app}>
-      {screen === 0 && (
+      {screen === "menu" && (
         <MenuScreen
           updateQuantity={updateQuantity}
-          handleClick={switchToConfirem}
+          handleButtonClick={switchToConfirem}
           items={items}
           title={title}
         />
       )}
-      {screen === 1 && (
-        <ConfirmScreen switchToDone={switchToDone} items={orderedItems} />
+      {screen === "confirm" && (
+        <ConfirmScreen switchToDone={switchToDone} items={selectedItems} />
       )}
-      {screen === 2 && <DoneScreen />}
+      {screen === "done" && <DoneScreen />}
     </div>
   );
 }
