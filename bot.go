@@ -34,7 +34,19 @@ var (
 func onRects(c tele.Context) error {
 	payload := c.Message().Payload
 	if payload == "" {
-		return c.Send(cfg.Domain + "/rects-tool")
+		text := cfg.Domain + "/rects-tool"
+		currentRects, err := GetRects()
+		if err != nil {
+			return c.Send(text)
+		}
+		jsonRects, err := json.Marshal(currentRects)
+		if err != nil {
+			return c.Send(text)
+		}
+		text = text + "\n`" + string(jsonRects) + "`"
+		return c.Send(text, &tele.SendOptions{
+			ParseMode: tele.ModeMarkdown,
+		})
 	}
 	var rects []FloatRect
 	if err := json.Unmarshal([]byte(payload), &rects); err != nil {
@@ -188,7 +200,10 @@ func onMenu(c tele.Context) error {
 		if err := json.Unmarshal([]byte(menu.Items), &items); err != nil {
 			return c.Send("Menu parse error")
 		}
-		return c.Send(strings.Join(items, "\n"))
+		text := "`/menu\n" + strings.Join(items, "\n") + "`"
+		return c.Send(text, &tele.SendOptions{
+			ParseMode: tele.ModeMarkdown,
+		})
 	}
 	lines := strings.Split(c.Message().Text, "\n")[1:]
 	linesJson, err := json.Marshal(lines)
