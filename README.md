@@ -4,7 +4,7 @@
 
 <img width="630" alt="image" src="https://user-images.githubusercontent.com/41614960/164896287-4fe14fa3-f41f-4371-9c20-8cbbc5600d53.png">
 
-На сайте по ссылке можно собрать заказ
+Перейдя по кнопке, можно собрать заказ
 
 <table>
  <tr>
