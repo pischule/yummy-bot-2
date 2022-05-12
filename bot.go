@@ -91,6 +91,7 @@ func onPhoto(c tele.Context) error {
 	}
 
 	items := GetTextFromImage(buf.Bytes(), rects)
+	items = append(items, "хлеб")
 
 	today := Today()
 	tomorrowDate := today.AddDate(0, 0, 1)
