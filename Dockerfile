@@ -39,6 +39,8 @@ WORKDIR /app
 COPY --from=builder /app/yummy-bot-2 ./yummy-bot-2
 COPY --from=builder /app/frontend/build ./frontend/build
 
+COPY ./rects-tool /app/rects-tool
+
 EXPOSE 8080
 
 ENV GIN_MODE=release
