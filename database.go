@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	dbPath   = "./db.sqlite"
+	dbPath   = "data/db.sqlite3"
 	rectsKey = "rects"
 )
 

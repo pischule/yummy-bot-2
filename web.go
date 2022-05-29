@@ -32,12 +32,12 @@ type OrderItem struct {
 	Quantity int    `json:"quantity"`
 }
 
-func RunWeb(debug bool) {
+func RunWeb(dev bool) {
 
 	gin.SetMode(gin.ReleaseMode)
 
 	r := gin.Default()
-	if debug {
+	if dev {
 		r.Use(CORSMiddleware())
 	}
 	r.GET("/menu", func(c *gin.Context) {

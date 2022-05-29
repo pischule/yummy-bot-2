@@ -2,8 +2,6 @@ import styles from "./App.module.css";
 
 import { useState, useEffect } from "react";
 
-import { apiUrl } from "./const";
-
 import MenuScreen from "./components/Menu/MenuScreen";
 import ConfirmScreen from "./components/Confirm/ConfirmScreen";
 import DoneScreen from "./components/DoneScreen/DoneScreen";
@@ -15,7 +13,7 @@ function App() {
   const [title, setTitle] = useState("Меню не доступно");
 
   async function fetchData() {
-    const result = await fetch(`${apiUrl}/menu`);
+    const result = await fetch(`${process.env.REACT_APP_API_URL}/menu`);
     const json = await result.json();
     const itemsWithQuantity = json.items.map((item) => {
       return {

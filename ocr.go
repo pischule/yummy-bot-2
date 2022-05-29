@@ -118,7 +118,7 @@ func GetTextFromImage(bytes []byte, roiRects []FloatRect) []string {
 			continue
 		}
 		text = postProcessText(text)
-		if len(text) > 1 {
+		if len(text) > 2 {
 			lines = append(lines, text)
 		}
 	}

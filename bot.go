@@ -87,7 +87,10 @@ func onPhoto(c tele.Context) error {
 
 	rects, err := GetRects()
 	if err != nil {
-		return nil
+		_, err = bot.Send(&tele.Chat{
+			ID: cfg.AdminId,
+		}, "ERROR: could not get rects")
+		return err
 	}
 
 	items := GetTextFromImage(buf.Bytes(), rects)
@@ -224,12 +227,10 @@ func onMenu(c tele.Context) error {
 }
 
 func RunBot(config BotConfig) {
-	pref := tele.Settings{
+	b, err := tele.NewBot(tele.Settings{
 		Token:  config.Token,
 		Poller: &tele.LongPoller{Timeout: 10 * time.Second},
-	}
-
-	b, err := tele.NewBot(pref)
+	})
 	if err != nil {
 		log.Fatal(err)
 		return

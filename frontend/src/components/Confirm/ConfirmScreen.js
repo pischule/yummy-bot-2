@@ -5,8 +5,6 @@ import styles from "./ConfirmScreen.module.css";
 import LargeButton from "../UI/LargeButton";
 import Card from "../UI/Card";
 
-import { apiUrl } from "../../const";
-
 function ConfirmScreen(props) {
   const [name, setName] = useState(localStorage.getItem("name") || null);
   const [pressed, setPressed] = useState(false);
@@ -32,7 +30,7 @@ function ConfirmScreen(props) {
       return;
     }
 
-    if (!pressed && name !== null) {
+    if (!pressed) {
       setPressed(true);
 
       const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -46,7 +44,7 @@ function ConfirmScreen(props) {
         return;
       }
 
-      fetch(`${apiUrl}/order`, {
+      fetch(`${process.env.REACT_APP_API_URL}/order`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +76,7 @@ function ConfirmScreen(props) {
           onChange={handleNameChange}
           className={styles.input}
           placeholder="Введите ваше имя"
-        ></input>
+        />
         <ul>
           {props.items.map((item) => (
             <li key={item.name}>

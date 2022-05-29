@@ -1,0 +1,17 @@
+version: "2.0"
+
+services:
+    bot:
+      image: yummy-bot-2
+      restart: unless-stopped
+      environment:
+        TOKEN: "${TOKEN}"
+        DOMAIN: "${DOMAIN}"
+        ADMIN_ID: "${ADMIN_ID}"
+        YUMMY_ID: "${YUMMY_ID}"
+        ORDER_HOUR_END: "${ORDER_HOUR_END}"
+        ENV: "${ENV}"
+      ports:
+        - "8080:8080"
+      volumes:
+        - ./data:/app/data
