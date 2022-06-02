@@ -9,6 +9,7 @@ services:
         DOMAIN: "${DOMAIN}"
         ADMIN_ID: "${ADMIN_ID}"
         YUMMY_ID: "${YUMMY_ID}"
+        GROUP_ID: "${GROUP_ID}"
         ORDER_HOUR_END: "${ORDER_HOUR_END}"
         ENV: "${ENV}"
       ports:
