@@ -33,10 +33,8 @@ function ConfirmScreen(props) {
     if (!pressed) {
       setPressed(true);
 
-      const params = new Proxy(new URLSearchParams(window.location.search), {
-        get: (searchParams, prop) => searchParams.get(prop),
-      });
-      const id = params.id;
+      const searchParams = new URLSearchParams(window.location.search);
+      const id = searchParams.get("id");
 
       if (id === null || id === undefined) {
         setPressed(false);
@@ -44,24 +42,35 @@ function ConfirmScreen(props) {
         return;
       }
 
+      let dataCheckString = Array.from(searchParams.entries())
+        .filter(i => i[0] !== 'hash')
+        .map(i => i.join('='))
+        .sort()
+        .join('\n');
+
       fetch(`${process.env.REACT_APP_API_URL}/order`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          userId: +id,
+          userId: + id,
           name: name,
           items: props.items,
+          dataCheckString: dataCheckString,
+          hash: searchParams.get("hash"),
         }),
       }).then((response) => {
         if (response.status === 200) {
-          setPressed(false);
           props.switchToDone();
         } else {
-          alert("Ошибка отправки заказа");
-          setPressed(false);
+          response.json().then((data) => {
+            alert(`Ошибка отправки заказа\n${data.error}`);
+          }).catch((error) => {
+            alert(`Ошибка отправки заказа\n${error}`);
+          });
         }
+        setPressed(false);
       });
     }
   };

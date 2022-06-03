@@ -2,6 +2,9 @@ package main
 
 import (
 	"bytes"
+	"crypto/hmac"
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -154,6 +157,14 @@ func onText(c tele.Context) error {
 }
 
 func PostOrderInChat(order OrderRequest) error {
+	secretKey := sha256.Sum256([]byte(cfg.Token))
+	secretKeyHmac := hmac.New(sha256.New, secretKey[:])
+	secretKeyHmac.Write([]byte(order.DataCheckString))
+	hash := secretKeyHmac.Sum(nil)
+	if hex.EncodeToString(hash) != order.Hash {
+		return errors.New("invalid signature")
+	}
+
 	group := tele.Chat{
 		ID: cfg.GroupId,
 	}
@@ -168,12 +179,12 @@ func PostOrderInChat(order OrderRequest) error {
 		tele.Member:        true,
 	}
 	if !allowedRoles[memberOf.Role] {
-		return errors.New("not allowed")
+		return errors.New("not allowed role")
 	}
 
 	minskHour := GetMinskHour()
 	if minskHour >= cfg.OrderHourEnd {
-		return errors.New("too late")
+		return errors.New("you are too late")
 	}
 
 	var sb strings.Builder
