@@ -19,9 +19,9 @@
   height: 0.4rem;
   padding: 10px;
   margin-right: 10px;
-  background-color: #5e0064;
+  background-color: var(--button-color);
   border-radius: 50%;
-  color: white;
+  color: var(--button-text-color);
   font-size: 0.8rem;
   text-align: center;
   font-weight: bold;

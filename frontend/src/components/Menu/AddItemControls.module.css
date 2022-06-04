@@ -15,7 +15,7 @@
   border: none;
   border: 0%;
   padding: 0%;
-  color: white;
+  color: var(--button-text-color);
   border-radius: 0.5rem;
   height: 2rem;
   cursor: pointer;

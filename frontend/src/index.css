@@ -2,6 +2,7 @@ body {
   background-color: rgb(232, 232, 232);
   font-family: "Roboto", sans-serif;
 
-  --button-color: #bc37da;
-  --button-hover-color: #c869dd;
+  --button-color: #ffb300;
+  --button-hover-color: #c68400;
+  --button-text-color: #000000;
 }
