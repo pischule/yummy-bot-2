@@ -88,7 +88,7 @@ function ConfirmScreen(props) {
         />
         <ul>
           {props.items.map((item) => (
-            <li key={item.name}>
+            <li key={item.id}>
               {item.name} x{item.quantity}
             </li>
           ))}

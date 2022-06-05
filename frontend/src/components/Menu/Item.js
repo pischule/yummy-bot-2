@@ -4,7 +4,7 @@ import AddItemControls from "./AddControls";
 
 function Item(props) {
   const updateQuantity = (quantity) => {
-    props.updateQuantity(props.name, quantity);
+    props.updateQuantity(props.id, quantity);
   };
 
   return (

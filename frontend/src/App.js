@@ -15,8 +15,10 @@ function App() {
   async function fetchData() {
     const result = await fetch(`${process.env.REACT_APP_API_URL}/menu`);
     const json = await result.json();
+    let currentId = 0;
     const itemsWithQuantity = json.items.map((item) => {
       return {
+        id: currentId++,
         name: item,
         quantity: 0,
       };
@@ -29,9 +31,9 @@ function App() {
     fetchData();
   }, []);
 
-  const updateQuantity = (name, count) => {
+  const updateQuantity = (id, count) => {
     const newItems = items.map((item) => {
-      if (item.name === name) {
+      if (item.id === id) {
         item.quantity = count;
       }
       return item;

@@ -8,7 +8,8 @@ function ItemList(props) {
     <div className="items-list">
       {props.items.map(item => (
         <Item
-          key={item.name}
+          key={item.id}
+          id={item.id}
           name={item.name}
           quantity={item.quantity}
           updateQuantity={props.updateQuantity}
