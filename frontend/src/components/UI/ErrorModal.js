@@ -12,7 +12,7 @@ const ModalOverlay = (props) => {
   return (
     <Card className={classes.modal}>
       <header className={classes.header}>
-        <h2>{props.title}</h2>
+        <h2 className={classes.h2}>{props.title}</h2>
       </header>
       <div>
         <p>{props.message}</p>
