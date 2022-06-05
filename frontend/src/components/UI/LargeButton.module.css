@@ -19,8 +19,9 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.button:hover,
-.button:active {
-  background-color: var(--button-hover-color);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+@media (hover: hover) {
+  .button:hover {
+    background-color: var(--button-hover-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
 }
