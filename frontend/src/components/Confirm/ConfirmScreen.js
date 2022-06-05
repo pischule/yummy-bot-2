@@ -21,12 +21,18 @@ function ConfirmScreen(props) {
   };
 
   const handleClick = () => {
-    if (name == null) {
-      alert("Введите имя");
+    if (name == null || name === "") {
+      props.setError({
+        title: "Ошибка",
+        message: "введите имя",
+      });
       return;
     }
     if (!isNameValid(name)) {
-      alert("Имя может содержать только кириллицу");
+      props.setError({
+        title: "Ошибка",
+        message: "имя может содержать только кириллицу",
+      });
       return;
     }
 
@@ -38,15 +44,18 @@ function ConfirmScreen(props) {
 
       if (id === null || id === undefined) {
         setPressed(false);
-        alert("Ошибка авторизации. Попробуйте снова перейти по кнопке в чате");
+        props.setError({
+          title: "Ошибка",
+          message: "попробуйте снова перейти по кнопке в чате",
+        });
         return;
       }
 
       let dataCheckString = Array.from(searchParams.entries())
-        .filter(i => i[0] !== 'hash')
-        .map(i => i.join('='))
+        .filter((i) => i[0] !== "hash")
+        .map((i) => i.join("="))
         .sort()
-        .join('\n');
+        .join("\n");
 
       fetch(`${process.env.REACT_APP_API_URL}/order`, {
         method: "POST",
@@ -54,24 +63,33 @@ function ConfirmScreen(props) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          userId: + id,
+          userId: +id,
           name: name,
           items: props.items,
           dataCheckString: dataCheckString,
           hash: searchParams.get("hash"),
         }),
-      }).then((response) => {
-        if (response.status === 200) {
-          props.switchToDone();
-        } else {
-          response.json().then((data) => {
-            alert(`Ошибка отправки заказа\n${data.error}`);
-          }).catch((error) => {
-            alert(`Ошибка отправки заказа\n${error}`);
+      })
+        .then((response) => {
+          if (response.status === 200) {
+            props.switchToDone();
+          } else {
+            response.json().then((data) => {
+              props.setError({
+                title: "Ошибка",
+                message: data.error,
+              });
+            });
+          }
+          setPressed(false);
+        })
+        .catch((error) => {
+          props.setError({
+            title: "Ошибка",
+            message: error.toString(),
           });
-        }
-        setPressed(false);
-      });
+          setPressed(false);
+        });
     }
   };
 

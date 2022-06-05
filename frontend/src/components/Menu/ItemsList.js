@@ -1,12 +1,10 @@
 import Item from "./Item";
 
-
-
 function ItemList(props) {
 
   return (
     <div className="items-list">
-      {props.items.map(item => (
+      {props.items.map((item) => (
         <Item
           key={item.id}
           id={item.id}

@@ -6,11 +6,13 @@ import MenuScreen from "./components/Menu/MenuScreen";
 import ConfirmScreen from "./components/Confirm/ConfirmScreen";
 import DoneScreen from "./components/DoneScreen/DoneScreen";
 import LoginScreen from "./components/Login/LoginScreen";
+import ErrorModal from "./components/UI/ErrorModal";
 
 function App() {
   const [screen, setScreen] = useState("menu");
   const [items, setItems] = useState([]);
   const [title, setTitle] = useState("Меню не доступно");
+  const [error, setError] = useState();
 
   async function fetchData() {
     const result = await fetch(`${process.env.REACT_APP_API_URL}/menu`);
@@ -41,10 +43,19 @@ function App() {
     setItems(newItems);
   };
 
+  const errorHandler = () => {
+    setError(null);
+  };
+
   const switchToConfirem = () => {
     const selectedItems = items.filter((item) => item.quantity > 0);
     if (selectedItems.length > 0) {
       setScreen("confirm");
+    } else {
+      setError({
+        title: "Заказ пуст",
+        message: "выберите хотя бы один пункт",
+      });
     }
   };
 
@@ -68,6 +79,13 @@ function App() {
 
   return (
     <div className={styles.app}>
+      {error && (
+        <ErrorModal
+          title={error.title}
+          message={error.message}
+          onConfirm={errorHandler}
+        />
+      )}
       {screen === "menu" && (
         <MenuScreen
           updateQuantity={updateQuantity}
@@ -77,7 +95,7 @@ function App() {
         />
       )}
       {screen === "confirm" && (
-        <ConfirmScreen switchToDone={switchToDone} items={selectedItems} />
+        <ConfirmScreen switchToDone={switchToDone} items={selectedItems} setError={setError}/>
       )}
       {screen === "done" && <DoneScreen />}
     </div>

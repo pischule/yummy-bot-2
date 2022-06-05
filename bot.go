@@ -11,6 +11,7 @@ import (
 	"io"
 	"log"
 	"regexp"
+	"strconv"
 	"strings"
 	"time"
 
@@ -162,7 +163,7 @@ func PostOrderInChat(order OrderRequest) error {
 	secretKeyHmac.Write([]byte(order.DataCheckString))
 	hash := secretKeyHmac.Sum(nil)
 	if hex.EncodeToString(hash) != order.Hash {
-		return errors.New("invalid signature")
+		return errors.New("что-то не так с данными авторизации")
 	}
 
 	group := tele.Chat{
@@ -179,12 +180,12 @@ func PostOrderInChat(order OrderRequest) error {
 		tele.Member:        true,
 	}
 	if !allowedRoles[memberOf.Role] {
-		return errors.New("not allowed role")
+		return errors.New("похоже, вы не состоите в группе")
 	}
 
 	minskHour := GetMinskHour()
 	if minskHour >= cfg.OrderHourEnd {
-		return errors.New("you are too late")
+		return errors.New("заказы принимаются до " + strconv.Itoa(cfg.OrderHourEnd) + ":00")
 	}
 
 	var sb strings.Builder
