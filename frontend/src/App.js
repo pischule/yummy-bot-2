@@ -58,7 +58,7 @@ function App() {
       }
 
       const soupsStartIndex = 0;
-      const garnishesStartIndex = 3;
+      const garnishesStartIndex = 4;
       const secondDishesStartIndex = prevItems.length - 6;
 
       const randomSoupIndex =
