@@ -169,7 +169,8 @@ func PostOrderInChat(order OrderRequest) error {
 	group := tele.Chat{
 		ID: cfg.GroupId,
 	}
-	memberOf, err := bot.ChatMemberOf(&group, &tele.User{ID: order.UserId})
+	userId, _ := strconv.ParseInt(order.UserId, 10, 64)
+	memberOf, err := bot.ChatMemberOf(&group, &tele.User{ID: userId})
 	if err != nil {
 		return err
 	}

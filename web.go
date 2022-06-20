@@ -22,7 +22,7 @@ func CORSMiddleware() gin.HandlerFunc {
 }
 
 type OrderRequest struct {
-	UserId          int64       `json:"userId"`
+	UserId          string      `json:"userId"`
 	Name            string      `json:"name"`
 	Items           []OrderItem `json:"items"`
 	DataCheckString string      `json:"dataCheckString"`

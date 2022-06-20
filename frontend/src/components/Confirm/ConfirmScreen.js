@@ -63,7 +63,7 @@ function ConfirmScreen(props) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          userId: +id,
+          userId: id,
           name: name,
           items: props.items,
           dataCheckString: dataCheckString,
