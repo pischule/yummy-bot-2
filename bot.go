@@ -190,7 +190,7 @@ func PostOrderInChat(order OrderRequest) error {
 	}
 
 	var sb strings.Builder
-	sb.WriteString(fmt.Sprintf("[%s](tg://user?id=%d):\n", order.Name, order.UserId))
+	sb.WriteString(fmt.Sprintf("[%s](tg://user?id=%d):\n", order.Name, userId))
 	for _, item := range order.Items {
 		sb.WriteString(fmt.Sprintf("- %s x%d\n", item.Name, item.Quantity))
 	}
