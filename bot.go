@@ -35,7 +35,7 @@ var (
 func onRects(c tele.Context) error {
 	payload := c.Message().Payload
 	if payload == "" {
-		text := cfg.Domain + "/rects-tool"
+		text := "https://pischule.github.io/yummy-bot-2/rects-tool/"
 		currentRects, err := GetRects()
 		if err != nil {
 			return c.Send(text)

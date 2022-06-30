@@ -6,11 +6,8 @@ on:
     paths-ignore:
       - 'README.md'
       - 'docker-compose.yml'
-
-  pull_request:
-    branches: [ master ]
-    paths-ignore:
-      - 'README.md'
+      - 'frontend/**'
+      - 'rects-tool/**'
 
 jobs:
   docker:

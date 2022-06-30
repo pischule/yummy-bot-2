@@ -70,8 +70,6 @@ func RunWeb(dev bool) {
 		c.JSON(200, gin.H{"message": "ok"})
 	})
 
-	r.Static("/rects-tool", "./rects-tool")
-
 	if err := r.Run(); err != nil {
 		panic(err)
 	}
