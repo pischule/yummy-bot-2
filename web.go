@@ -4,22 +4,9 @@ import (
 	"encoding/json"
 	"log"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
-
-func CORSMiddleware() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
-		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
-		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
-		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT, DELETE")
-		if c.Request.Method == "OPTIONS" {
-			c.AbortWithStatus(204)
-			return
-		}
-		c.Next()
-	}
-}
 
 type OrderRequest struct {
 	UserId          string      `json:"userId"`
@@ -40,7 +27,11 @@ func RunWeb(dev bool) {
 
 	r := gin.Default()
 	if dev {
-		r.Use(CORSMiddleware())
+		r.Use(cors.Default())
+	} else {
+		config := cors.DefaultConfig()
+		config.AllowOrigins = []string{"https://yummy.pischule.xyz", "https://y.pischule.xyz"}
+		r.Use(cors.New(config))
 	}
 	r.GET("/menu", func(c *gin.Context) {
 		menu, err := GetMenu(Today())
@@ -78,13 +69,6 @@ func RunWeb(dev bool) {
 		}
 		c.JSON(200, gin.H{"message": "ok"})
 	})
-
-	r.Static("/static", "./frontend/build/static")
-	r.StaticFile("/", "./frontend/build/index.html")
-	r.StaticFile("/favicon.ico", "./frontend/build/favicon.ico")
-	r.StaticFile("/manifest.json", "./frontend/build/manifest.json")
-	r.StaticFile("/logo192.png", "./frontend/build/logo192.png")
-	r.StaticFile("/logo512.png", "./frontend/build/logo512.png")
 
 	r.Static("/rects-tool", "./rects-tool")
 
