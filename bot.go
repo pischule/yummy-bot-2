@@ -2,6 +2,9 @@ package main
 
 import (
 	"bytes"
+	"crypto/hmac"
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -155,6 +158,13 @@ func onText(c tele.Context) error {
 }
 
 func PostOrderInChat(order OrderRequest) error {
+	secretKey := sha256.Sum256([]byte(cfg.Token))
+	secretKeyHmac := hmac.New(sha256.New, secretKey[:])
+	secretKeyHmac.Write([]byte(order.DataCheckString))
+	hash := secretKeyHmac.Sum(nil)
+	if hex.EncodeToString(hash) != order.Hash {
+		log.Printf("auth fail: %v", order)
+	}
 	group := tele.Chat{
 		ID: cfg.GroupId,
 	}
@@ -241,7 +251,7 @@ func RunBot(config BotConfig) {
 	bot = b
 
 	adminOnly := b.Group()
-	adminOnly.Use(middleware.Whitelist(config.AdminId))
+	adminOnly.Use(middleware.Whitelist(config.AdminId, config.YummyId))
 	adminOnly.Handle("/rects", onRects)
 	adminOnly.Handle("/menu", onMenu)
 
