@@ -2,7 +2,7 @@
 
 FROM golang:1.18-alpine as builder
 
-RUN apk add --no-cache gcc musl-dev g++ leptonica-dev tesseract-ocr-dev opencv-dev npm
+RUN apk add --no-cache gcc musl-dev g++ leptonica-dev tesseract-ocr-dev opencv-dev
 
 WORKDIR /app
 

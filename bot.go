@@ -165,23 +165,7 @@ func PostOrderInChat(order OrderRequest) error {
 	if hex.EncodeToString(hash) != order.Hash {
 		log.Printf("auth fail: %v", order)
 	}
-	group := tele.Chat{
-		ID: cfg.GroupId,
-	}
 	userId, _ := strconv.ParseInt(order.UserId, 10, 64)
-	memberOf, err := bot.ChatMemberOf(&group, &tele.User{ID: userId})
-	if err != nil {
-		return err
-	}
-
-	allowedRoles := map[tele.MemberStatus]bool{
-		tele.Creator:       true,
-		tele.Administrator: true,
-		tele.Member:        true,
-	}
-	if !allowedRoles[memberOf.Role] {
-		return errors.New("похоже, вы не состоите в группе")
-	}
 
 	minskHour := GetMinskHour()
 	if minskHour >= cfg.OrderHourEnd {
@@ -193,7 +177,7 @@ func PostOrderInChat(order OrderRequest) error {
 	for _, item := range order.Items {
 		sb.WriteString(fmt.Sprintf("- %s x%d\n", item.Name, item.Quantity))
 	}
-	_, err = bot.Send(
+	_, err := bot.Send(
 		&tele.Chat{
 			ID: cfg.GroupId,
 		},
