@@ -2,7 +2,7 @@
 
 FROM golang:1.18-alpine as builder
 
-RUN apk add --no-cache gcc musl-dev g++ leptonica-dev tesseract-ocr-dev opencv-dev
+RUN apk add --no-cache gcc musl-dev
 
 WORKDIR /app
 
@@ -14,8 +14,6 @@ COPY *.go ./
 RUN go build -a -o yummy-bot-2
 
 FROM alpine:3.16
-
-RUN apk add --no-cache leptonica tesseract-ocr opencv tesseract-ocr-data-rus
 
 WORKDIR /app
 

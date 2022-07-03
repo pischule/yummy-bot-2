@@ -1,14 +1,12 @@
 package main
 
 import (
-	"bytes"
 	"crypto/hmac"
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io"
 	"log"
 	"regexp"
 	"strconv"
@@ -21,12 +19,14 @@ import (
 )
 
 type BotConfig struct {
-	Token        string
-	AdminId      int64
-	GroupId      int64
-	YummyId      int64
-	Domain       string
-	OrderHourEnd int
+	Token         string
+	AdminId       int64
+	GroupId       int64
+	YummyId       int64
+	Domain        string
+	OrderHourEnd  int
+	AbbyyUsername string
+	AbbyyPassword string
 }
 
 var (
@@ -83,12 +83,6 @@ func onPhoto(c tele.Context) error {
 		return err
 	}
 
-	var buf bytes.Buffer
-	_, err = io.Copy(&buf, reader)
-	if err != nil {
-		return c.Send("error")
-	}
-
 	rects, err := GetRects()
 	if err != nil {
 		_, err = bot.Send(&tele.Chat{
@@ -97,7 +91,11 @@ func onPhoto(c tele.Context) error {
 		return err
 	}
 
-	items := GetTextFromImage(buf.Bytes(), rects)
+	items, err := GetTextFromImageAbbyy(reader, rects, cfg.AbbyyUsername, cfg.AbbyyPassword)
+	if err != nil {
+		log.Println("could not extract lines from image")
+		return err
+	}
 	items = append(items, "хлеб")
 
 	today := Today()
