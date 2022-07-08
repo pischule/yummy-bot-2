@@ -110,7 +110,7 @@ func processImage(imageReader io.Reader, username string, password string) (task
 	req, err := http.NewRequest(method, url, imageReader)
 
 	if err != nil {
-		log.Println(err)
+		log.Println("create task request creation failed", err)
 		return taskStruct{}, err
 	}
 	req.SetBasicAuth(username, password)
@@ -118,19 +118,24 @@ func processImage(imageReader io.Reader, username string, password string) (task
 
 	res, err := client.Do(req)
 	if err != nil {
-		log.Println(err)
+		log.Println("task creation request failed", err)
 		return taskStruct{}, err
 	}
-	defer res.Body.Close()
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+			log.Println("task create body close failed")
+		}
+	}(res.Body)
 
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
-		log.Println(err)
+		log.Println("body read failed", err)
 		return taskStruct{}, err
 	}
 	var taskResponse taskResponse
 	if err := xml.Unmarshal(body, &taskResponse); err != nil {
-		log.Println(err)
+		log.Println("task creation response unmarshall failed", err)
 		return taskStruct{}, err
 	}
 	return taskResponse.Task, nil
@@ -142,28 +147,32 @@ func getTaskStatus(task taskStruct, username string, password string) (taskStruc
 
 	client := &http.Client{}
 	req, err := http.NewRequest(method, url, nil)
-
 	if err != nil {
-		log.Println(err)
+		log.Println("task check request creation failed", err)
 		return task, err
 	}
 	req.SetBasicAuth(username, password)
 
 	res, err := client.Do(req)
 	if err != nil {
-		log.Println(err)
+		log.Println("task check request failed")
 		return task, err
 	}
-	defer res.Body.Close()
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+			log.Println("task check body close failed")
+		}
+	}(res.Body)
 
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
-		log.Println(err)
+		log.Println("task check request body read failed", err)
 		return task, err
 	}
 	var taskResponse taskResponse
 	if err := xml.Unmarshal(body, &taskResponse); err != nil {
-		log.Println(err)
+		log.Println("task status response unmarshall failed", err)
 		return task, err
 	}
 	return taskResponse.Task, nil
@@ -172,20 +181,25 @@ func getTaskStatus(task taskStruct, username string, password string) (taskStruc
 func downloadResult(task taskStruct) (abbyyDocument, error) {
 	res, err := http.Get(task.ResultUrl)
 	if err != nil {
-		log.Println(err)
+		log.Println("download task result failed", err)
 		return abbyyDocument{}, err
 	}
-	defer res.Body.Close()
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+			log.Println("task result body close failed")
+		}
+	}(res.Body)
 
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
-		log.Println(err)
+		log.Println("task result body read failed", err)
 		return abbyyDocument{}, err
 	}
 	var document abbyyDocument
 	err = xml.Unmarshal(body, &document)
 	if err != nil {
-		log.Println(err)
+		log.Println("task result unmarshall failed")
 		return abbyyDocument{}, err
 	}
 	return document, nil
@@ -195,17 +209,14 @@ func recognizeFile(imageReader io.Reader, username string, password string) (abb
 	log.Println("uploading...")
 	task, err := processImage(imageReader, username, password)
 	if err != nil {
-		log.Println("error creating task")
+		log.Println("processImage failed", err)
 		return abbyyDocument{}, err
 	}
 	if task.Status == "NotEnoughCredits" {
-		return abbyyDocument{}, fmt.Errorf("not enough credits to process the document. please add more pages to your application's account")
+		return abbyyDocument{}, fmt.Errorf("not enough credits to process the document")
 	}
-	log.Printf("id = %s", task.ID)
-	log.Printf("status = %s", task.Status)
-
+	log.Printf("task id = %s", task.ID)
 	log.Printf("waiting")
-
 	for i := 0; i < 10; i++ {
 		if !task.isActive() {
 			break

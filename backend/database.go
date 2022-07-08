@@ -38,11 +38,11 @@ func InitDb() {
 	}
 
 	if err := Db.AutoMigrate(&Menu{}); err != nil {
-		log.Fatal(err)
+		log.Fatal("Menu table migration failed", err)
 		return
 	}
 	if err := Db.AutoMigrate(&KeyValue{}); err != nil {
-		log.Fatal(err)
+		log.Fatal("KeyValue table migration failed")
 		return
 	}
 }

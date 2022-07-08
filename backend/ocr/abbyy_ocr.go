@@ -1,6 +1,7 @@
 package ocr
 
 import (
+	"fmt"
 	"image"
 	"io"
 	"regexp"
@@ -104,6 +105,7 @@ func extractLines(document abbyyDocument, rects []image.Rectangle) []string {
 func GetTextFromImageAbbyy(imageReader io.Reader, relativeRects []FloatRect, username string, password string) ([]string, error) {
 	doc, err := recognizeFile(imageReader, username, password)
 	if err != nil {
+		fmt.Println("recognizeFile failed", err)
 		return nil, err
 	}
 

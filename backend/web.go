@@ -36,11 +36,13 @@ func RunWeb(dev bool) {
 	r.GET("/menu", func(c *gin.Context) {
 		menu, err := GetMenu(Today())
 		if err != nil || menu.Items == "" {
+			log.Println("get menu failed", err)
 			c.JSON(404, gin.H{"error": "today's menu not found"})
 			return
 		}
 		var items = make([]string, 0)
 		if err := json.Unmarshal([]byte(menu.Items), &items); err != nil {
+			log.Println("menu items unmarshall failed")
 			c.JSON(500, gin.H{"error": err})
 			return
 		}
@@ -57,13 +59,14 @@ func RunWeb(dev bool) {
 	r.POST("/order", func(c *gin.Context) {
 		var order OrderRequest
 		if err := c.ShouldBindJSON(&order); err != nil {
+			log.Println("order request unmarshall failed", err)
 			c.JSON(400, gin.H{"error": err})
 			return
 		}
-		log.Println(order)
+		log.Println("post order", order)
 		err := PostOrderInChat(order)
 		if err != nil {
-			log.Println(order)
+			log.Println("post order in chat failed", err)
 			c.JSON(403, gin.H{"error": err.Error()})
 			return
 		}
@@ -71,6 +74,7 @@ func RunWeb(dev bool) {
 	})
 
 	if err := r.Run(); err != nil {
+		log.Println("webserver failed to start", err)
 		panic(err)
 	}
 }

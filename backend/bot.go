@@ -41,6 +41,7 @@ func onRects(c tele.Context) error {
 	if payload == "" {
 		currentRects, err := GetRects()
 		if err != nil {
+			log.Println("GetRects failed", err)
 			currentRects = make([]ocr.FloatRect, 0)
 		}
 		return c.Send(rectsToUri(currentRects), &tele.SendOptions{
@@ -49,14 +50,14 @@ func onRects(c tele.Context) error {
 	}
 	rects, err := loadRectsFromUri(payload)
 	if err != nil {
-		return c.Send("parse error")
+		return c.Send("uri rects parsing failed", err)
 	}
 	if len(rects) == 0 {
-		return c.Send("no rects")
+		return c.Send("uri contains no rects")
 	}
 	rectsJson, err := json.Marshal(rects)
 	if err != nil {
-		return c.Send("rects marshal error")
+		return c.Send("rects marshall failed")
 	}
 	SaveRects(string(rectsJson))
 	return c.Send("ok")
@@ -79,6 +80,7 @@ func onPhoto(c tele.Context) error {
 
 	reader, err := bot.File(&photo.File)
 	if err != nil {
+		log.Println("getting tg file failed", err)
 		return err
 	}
 
@@ -86,13 +88,13 @@ func onPhoto(c tele.Context) error {
 	if err != nil {
 		_, err = bot.Send(&tele.Chat{
 			ID: cfg.AdminId,
-		}, "ERROR: could not get rects")
+		}, "failed to get rects")
 		return err
 	}
 
 	items, err := ocr.GetTextFromImageAbbyy(reader, rects, cfg.AbbyyUsername, cfg.AbbyyPassword)
 	if err != nil {
-		log.Println("could not extract lines from image")
+		log.Println("getting text from image failed", err)
 		return err
 	}
 	items = append(items, "хлеб")
@@ -160,7 +162,9 @@ func PostOrderInChat(order OrderRequest) error {
 	secretKeyHmac.Write([]byte(order.DataCheckString))
 	hash := secretKeyHmac.Sum(nil)
 	if hex.EncodeToString(hash) != order.Hash {
-		log.Printf("auth fail: %v", order)
+		log.Println("auth fail")
+	} else {
+		log.Println("auth success")
 	}
 	userId, _ := strconv.ParseInt(order.UserId, 10, 64)
 
@@ -191,11 +195,11 @@ func onMenu(c tele.Context) error {
 	if c.Message().Payload == "" {
 		menu, err := GetMenu(today)
 		if err != nil {
-			return c.Send("Menu not found")
+			return c.Send("menu not found")
 		}
 		items := make([]string, 0)
 		if err := json.Unmarshal([]byte(menu.Items), &items); err != nil {
-			return c.Send("Menu parse error")
+			return c.Send("menu items json parsing failed")
 		}
 		text := "`/menu\n" + strings.Join(items, "\n") + "`"
 		return c.Send(text, &tele.SendOptions{
@@ -205,7 +209,7 @@ func onMenu(c tele.Context) error {
 	lines := strings.Split(c.Message().Text, "\n")[1:]
 	linesJson, err := json.Marshal(lines)
 	if err != nil {
-		return c.Send("Menu marshal error")
+		return c.Send("menu marshall failed")
 	}
 	tomorrow := today.AddDate(0, 0, 1)
 	if menuDate.Before(tomorrow) {
@@ -225,7 +229,7 @@ func RunBot(config Configuration) {
 		Poller: &tele.LongPoller{Timeout: 10 * time.Second},
 	})
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("bot creation failed", err)
 		return
 	}
 	cfg = &config
