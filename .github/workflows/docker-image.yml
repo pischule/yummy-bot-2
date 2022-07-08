@@ -6,6 +6,7 @@ on:
     paths:
       - 'backend/**'
       - '!/backend/docker-compose.yml'
+      - '.github/workflows/**'
 
 jobs:
   docker:
