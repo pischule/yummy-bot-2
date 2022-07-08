@@ -2,7 +2,6 @@ const img = new Image();
 
 const container = document.getElementById("container");
 const canvas = document.getElementById("canvas");
-const resultDiv = document.getElementById("result");
 const file = document.getElementById("file");
 const input = document.getElementById("input");
 const button = document.getElementById("copy");
@@ -11,7 +10,7 @@ const ctx = canvas.getContext("2d");
 let x = 0;
 let y = 0;
 let isDrawing = false;
-let movingIndex = -1;
+let isMoving = false;
 let rectangles = [];
 let lastPos = null;
 
@@ -35,6 +34,14 @@ function initImage() {
   draw();
 }
 
+function chunks(bigarray, size) {
+  const arrayOfArrays = [];
+  for (let i = 0; i < bigarray.length; i+=size) {
+    arrayOfArrays.push(bigarray.slice(i,i+size));
+  }
+  return arrayOfArrays;
+}
+
 function draw() {
   ctx.globalCompositeOperation = "copy";
   // prettier-ignore
@@ -51,26 +58,28 @@ function draw() {
   }
 }
 
-function round(x) {
-  return Math.round(x * 100000) / 100000;
+function round(n) {
+  const accuracy = 1000;
+  return Math.round(n * accuracy) / accuracy;
 }
 
 function mapRectangles(rectangles) {
   return rectangles.map(normalizeRectangle).map((r) => {
     return {
       min: {
-        x: r.x,
-        y: r.y,
+        x: round(r.x),
+        y: round(r.y),
       },
       max: {
-        x: r.x + r.w,
-        y: r.y + r.h,
+        x: round(r.x + r.w),
+        y: round(r.y + r.h),
       },
     };
   });
 }
 
 function updateInput() {
+  rectsToUriString();
   input.value = JSON.stringify(mapRectangles(rectangles));
 }
 
@@ -88,6 +97,7 @@ canvas.addEventListener("mousedown", (e) => {
   }
   lastPos = mousePos(e);
   const index = rectIndex(lastPos.x, lastPos.y);
+  let r;
   if (index >= 0) {
     isMoving = true;
     // move to top
@@ -118,7 +128,7 @@ canvas.addEventListener("mouseup", (e) => {
 });
 
 canvas.addEventListener("mousemove", (e) => {
-  last = rectangles[rectangles.length - 1];
+  let last = rectangles[rectangles.length - 1];
   if (!last) {
     return;
   }
@@ -135,7 +145,7 @@ canvas.addEventListener("mousemove", (e) => {
 });
 
 window.addEventListener("keydown", (e) => {
-  if (e.key == "Backspace" || e.key == "Delete") {
+  if (e.key === "Backspace" || e.key === "Delete") {
     rectangles.pop();
     draw();
     updateInput();
@@ -177,8 +187,34 @@ function rectIndex(x, y) {
 }
 
 button.addEventListener("click", () => {
-  updateClipboard(JSON.stringify(mapRectangles(rectangles)));
+  const rectsJson = JSON.stringify(mapRectangles(rectangles));
+  updateClipboard(rectsJson);
 });
+
+function rectsToUriString() {
+  if ('URLSearchParams' in window) {
+    const searchParams = new URLSearchParams(window.location.search)
+    const uriParam = rectangles.map((r) => [r.x, r.y, r.w, r.h].map(round).join("-")).join("-");
+    searchParams.set("rects", uriParam);
+    const newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
+    history.pushState(null, '', newRelativePathQuery);
+  }
+}
+
+function uriStringToRects() {
+  if ('URLSearchParams' in window) {
+    const searchParams = new URLSearchParams(window.location.search);
+    const uriParam = searchParams.get("rects");
+    if (uriParam === undefined || uriParam === null || uriParam === "") {
+      return
+    }
+    console.log(uriParam)
+    rectangles = chunks(uriParam.split('-').map((i) => +i), 4)
+        .map((r) => ({x: r[0], y: r[1], w: r[2], h: r[3]}));
+    console.log(rectangles);
+    updateInput();
+  }
+}
 
 file.addEventListener(
   "change",
@@ -189,6 +225,7 @@ file.addEventListener(
       img.src = e.target.result;
       rectangles = [];
       img.onload = initImage;
+      uriStringToRects();
       updateInput();
     };
     result.classList.remove("invisible");
@@ -198,7 +235,7 @@ file.addEventListener(
 );
 
 input.addEventListener("keyup", (e) => {
-  if (e.key == "Enter") {
+  if (e.key === "Enter") {
     try {
       rectangles = JSON.parse(input.value);
       rectangles = rectangles.map((r) => {
