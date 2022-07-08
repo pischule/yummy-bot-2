@@ -9,7 +9,7 @@ RUN go mod download
 
 COPY . .
 
-RUN CGO_ENABLED=0 go build -a -o yummy-bot-2
+RUN CGO_ENABLED=0 go build
 
 FROM alpine:3.16
 
