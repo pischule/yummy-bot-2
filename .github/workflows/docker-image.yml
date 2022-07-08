@@ -21,6 +21,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
+          working-directory: ./backend
           push: true
           tags: pischule/yummy-bot-2:latest
-          file: 'backend/Dockerfile'
