@@ -1,4 +1,4 @@
-package main
+package ocr
 
 import (
 	"image"
@@ -41,7 +41,7 @@ func postProcessTextAbbyy(text string) []string {
 	return resultLines
 }
 
-func extractLines(document AbbyyDocument, rects []image.Rectangle) []string {
+func extractLines(document abbyyDocument, rects []image.Rectangle) []string {
 	page := document.Page
 	blocks := make([]BlockOfText, 0, len(rects))
 	for _, block := range page.Block {
@@ -102,7 +102,7 @@ func extractLines(document AbbyyDocument, rects []image.Rectangle) []string {
 }
 
 func GetTextFromImageAbbyy(imageReader io.Reader, relativeRects []FloatRect, username string, password string) ([]string, error) {
-	doc, err := RecognizeFile(imageReader, username, password)
+	doc, err := recognizeFile(imageReader, username, password)
 	if err != nil {
 		return nil, err
 	}

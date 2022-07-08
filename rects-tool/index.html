@@ -18,19 +18,7 @@
         <div id="container" class="col-md-10 col-lg-8 col-xxl-6">
           <h1>ROI creator</h1>
           <input class="form-control mb-3" id="file" name="file" type="file" />
-          <div class="input-group mb-3 invisible" id="result">
-            <span class="input-group-text">ROIs: </span>
-            <input
-              id="input"
-              type="text"
-              onfocus="this.select();"
-              class="form-control"
-            />
-            <button class="btn btn-primary" type="button" id="copy">
-              Copy
-            </button>
-          </div>
-          <canvas id="canvas"></canvas>
+          <canvas id="canvas" width="0" height="0"></canvas>
         </div>
       </div>
     </div>

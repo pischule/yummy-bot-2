@@ -5,13 +5,15 @@ services:
       image: pischule/yummy-bot-2
       restart: unless-stopped
       environment:
-        TOKEN: "${TOKEN}"
+        TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
         DOMAIN: "${DOMAIN}"
         ADMIN_ID: "${ADMIN_ID}"
         YUMMY_ID: "${YUMMY_ID}"
         GROUP_ID: "${GROUP_ID}"
         ORDER_HOUR_END: "${ORDER_HOUR_END}"
         ENV: "${ENV}"
+        ABBYY_USERNAME: "${ABBYY_USERNAME}"
+        ABBYY_PASSWORD: "${ABBYY_PASSWORD}"
       ports:
         - "8080:8080"
       volumes:

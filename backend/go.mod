@@ -1,4 +1,4 @@
-module github.com/pischule/yummy-bot/v2
+module yummy-bot
 
 go 1.18
 

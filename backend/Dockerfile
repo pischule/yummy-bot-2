@@ -2,25 +2,23 @@
 
 FROM golang:1.18-alpine as builder
 
-RUN apk add --no-cache gcc musl-dev
-
 WORKDIR /app
 
 COPY ["go.mod", "go.sum", "./"]
 RUN go mod download
 
-COPY *.go ./
+COPY . .
 
-RUN go build -a -o yummy-bot-2
+RUN CGO_ENABLED=0 go build -a -o yummy-bot-2
 
 FROM alpine:3.16
 
 WORKDIR /app
 
-COPY --from=builder /app/yummy-bot-2 ./yummy-bot-2
+COPY --from=builder /app/yummy-bot .
 
 EXPOSE 8080
 
 ENV GIN_MODE=release
 
-ENTRYPOINT ["./yummy-bot-2"]
+ENTRYPOINT ["./yummy-bot"]

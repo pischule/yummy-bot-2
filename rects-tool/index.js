@@ -3,16 +3,15 @@ const img = new Image();
 const container = document.getElementById("container");
 const canvas = document.getElementById("canvas");
 const file = document.getElementById("file");
-const input = document.getElementById("input");
-const button = document.getElementById("copy");
 const ctx = canvas.getContext("2d");
 
 let x = 0;
 let y = 0;
-let isDrawing = false;
-let isMoving = false;
 let rectangles = [];
+let isDrawing = false;
+let movingIndex = -1;
 let lastPos = null;
+let imageLoaded = false;
 
 function rect2canvas(r) {
   return {
@@ -31,13 +30,14 @@ function initImage() {
   canvas.width = container.clientWidth - paddingX - borderX;
   const ratio = canvas.width / img.width;
   canvas.height = img.height * ratio;
+  imageLoaded = true;
   draw();
 }
 
 function chunks(bigarray, size) {
   const arrayOfArrays = [];
-  for (let i = 0; i < bigarray.length; i+=size) {
-    arrayOfArrays.push(bigarray.slice(i,i+size));
+  for (let i = 0; i < bigarray.length; i += size) {
+    arrayOfArrays.push(bigarray.slice(i, i + size));
   }
   return arrayOfArrays;
 }
@@ -51,36 +51,35 @@ function draw() {
   );
 
   ctx.globalCompositeOperation = "difference";
-  for (r of rectangles) {
-    ctx.fillStyle = "white";
+  ctx.fillStyle = "white";
+  for (let r of rectangles) {
     const cr = rect2canvas(r);
     ctx.fillRect(cr.x, cr.y, cr.w, cr.h);
   }
-}
 
-function round(n) {
-  const accuracy = 1000;
-  return Math.round(n * accuracy) / accuracy;
-}
-
-function mapRectangles(rectangles) {
-  return rectangles.map(normalizeRectangle).map((r) => {
-    return {
-      min: {
-        x: round(r.x),
-        y: round(r.y),
-      },
-      max: {
-        x: round(r.x + r.w),
-        y: round(r.y + r.h),
-      },
-    };
-  });
+  ctx.globalCompositeOperation = "source-over";
+  ctx.font = "50px sans-serif";
+  ctx.textBaseline = "middle";
+  ctx.textAlign = "center";
+  for (let i = 0; i < rectangles.length; i++) {
+    const cr = rect2canvas(rectangles[i]);
+    ctx.fillText("" + i, cr.x + cr.w / 2, cr.y + cr.h / 2);
+    ctx.strokeText("" + i, cr.x + cr.w / 2, cr.y + cr.h / 2);
+  }
 }
 
 function updateInput() {
-  rectsToUriString();
-  input.value = JSON.stringify(mapRectangles(rectangles));
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.set(
+    "r",
+    rectangles
+      .flatMap((r) => [r.x, r.y, r.w, r.h])
+      .map((n) => Math.round(n * 1000))
+      .join(".")
+  );
+  const newRelativePathQuery =
+    window.location.pathname + "?" + searchParams.toString();
+  history.pushState(null, "", newRelativePathQuery);
 }
 
 function mousePos(e) {
@@ -92,18 +91,14 @@ function mousePos(e) {
 }
 
 canvas.addEventListener("mousedown", (e) => {
-  if (e.button !== 0) {
+  if (!imageLoaded || e.button !== 0) {
     return;
   }
   lastPos = mousePos(e);
   const index = rectIndex(lastPos.x, lastPos.y);
-  let r;
   if (index >= 0) {
-    isMoving = true;
+    movingIndex = index;
     // move to top
-    r = rectangles[index];
-    rectangles.splice(index, 1);
-    rectangles.push(r);
   } else {
     isDrawing = true;
     rectangles.push({
@@ -116,13 +111,13 @@ canvas.addEventListener("mousedown", (e) => {
 });
 
 canvas.addEventListener("mouseup", (e) => {
-  if (e.button !== 0) {
+  if (!imageLoaded || e.button !== 0) {
     return;
   }
   x = 0;
   y = 0;
   isDrawing = false;
-  isMoving = false;
+  movingIndex = -1;
   lastPos = null;
   updateInput();
 });
@@ -136,9 +131,9 @@ canvas.addEventListener("mousemove", (e) => {
   if (isDrawing) {
     last.w = x - last.x;
     last.h = y - last.y;
-  } else if (isMoving) {
-    last.x += x - lastPos.x;
-    last.y += y - lastPos.y;
+  } else if (movingIndex !== -1) {
+    rectangles[movingIndex].x += x - lastPos.x;
+    rectangles[movingIndex].y += y - lastPos.y;
   }
   lastPos = { x, y };
   draw();
@@ -152,33 +147,15 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-function updateClipboard(newClip) {
-  navigator.clipboard.writeText(newClip).then(
-    () => {
-      button.innerHTML = "Copied!";
-    },
-    () => {
-      button.innerHTML = "Failed to copy!";
-    }
-  );
-  setTimeout(() => {
-    button.innerHTML = "Copy";
-  }, 2000);
-}
-
-function normalizeRectangle(r) {
-  return {
-    x: Math.min(r.x, r.x + r.w),
-    y: Math.min(r.y, r.y + r.h),
-    w: Math.abs(r.w),
-    h: Math.abs(r.h),
-  };
-}
-
 function rectIndex(x, y) {
   for (let i = rectangles.length - 1; i >= 0; i--) {
     const r = rectangles[i];
-    const nr = normalizeRectangle(r);
+    const nr = {
+      x: Math.min(r.x, r.x + r.w),
+      y: Math.min(r.y, r.y + r.h),
+      w: Math.abs(r.w),
+      h: Math.abs(r.h),
+    };
     if (x >= nr.x && x <= nr.x + nr.w && y >= nr.y && y <= nr.y + nr.h) {
       return i;
     }
@@ -186,34 +163,16 @@ function rectIndex(x, y) {
   return -1;
 }
 
-button.addEventListener("click", () => {
-  const rectsJson = JSON.stringify(mapRectangles(rectangles));
-  updateClipboard(rectsJson);
-});
-
-function rectsToUriString() {
-  if ('URLSearchParams' in window) {
-    const searchParams = new URLSearchParams(window.location.search)
-    const uriParam = rectangles.map((r) => [r.x, r.y, r.w, r.h].map(round).join("-")).join("-");
-    searchParams.set("rects", uriParam);
-    const newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
-    history.pushState(null, '', newRelativePathQuery);
-  }
-}
-
 function uriStringToRects() {
-  if ('URLSearchParams' in window) {
-    const searchParams = new URLSearchParams(window.location.search);
-    const uriParam = searchParams.get("rects");
-    if (uriParam === undefined || uriParam === null || uriParam === "") {
-      return
-    }
-    console.log(uriParam)
-    rectangles = chunks(uriParam.split('-').map((i) => +i), 4)
-        .map((r) => ({x: r[0], y: r[1], w: r[2], h: r[3]}));
-    console.log(rectangles);
-    updateInput();
+  const searchParams = new URLSearchParams(window.location.search);
+  const uriParam = searchParams.get("r");
+  if (uriParam === undefined || uriParam === null || uriParam === "") {
+    return;
   }
+  rectangles = chunks(
+    uriParam.split(".").map((i) => i / 1000),
+    4
+  ).map((r) => ({ x: r[0], y: r[1], w: r[2], h: r[3] }));
 }
 
 file.addEventListener(
@@ -223,34 +182,14 @@ file.addEventListener(
     const reader = new FileReader();
     reader.onload = (e) => {
       img.src = e.target.result;
-      rectangles = [];
       img.onload = initImage;
-      uriStringToRects();
       updateInput();
     };
-    result.classList.remove("invisible");
     reader.readAsDataURL(file);
   },
   false
 );
 
-input.addEventListener("keyup", (e) => {
-  if (e.key === "Enter") {
-    try {
-      rectangles = JSON.parse(input.value);
-      rectangles = rectangles.map((r) => {
-        return {
-          x: r.min.x,
-          y: r.min.y,
-          w: r.max.x - r.min.x,
-          h: r.max.y - r.min.y,
-        };
-      });
-      draw();
-    } catch (e) {
-      console.log(e);
-    }
-  }
-});
+uriStringToRects();
 
 window.onresize = initImage;

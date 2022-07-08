@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	cfg := BotConfig{}
-	cfg.Token = os.Getenv("TOKEN")
+	cfg := Configuration{}
+	cfg.TelegramToken = os.Getenv("TELEGRAM_TOKEN")
 	cfg.Domain = os.Getenv("DOMAIN")
 	cfg.AdminId, _ = strconv.ParseInt(os.Getenv("ADMIN_ID"), 10, 64)
 	cfg.YummyId, _ = strconv.ParseInt(os.Getenv("YUMMY_ID"), 10, 64)

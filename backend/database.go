@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"time"
+	"yummy-bot/ocr"
 
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
@@ -46,10 +47,10 @@ func InitDb() {
 	}
 }
 
-func GetRects() ([]FloatRect, error) {
+func GetRects() ([]ocr.FloatRect, error) {
 	var kv KeyValue
 	Db.Find(&kv, "key = ?", rectsKey)
-	var rects []FloatRect
+	var rects []ocr.FloatRect
 	if err := json.Unmarshal([]byte(kv.Value), &rects); err != nil {
 		return nil, err
 	}

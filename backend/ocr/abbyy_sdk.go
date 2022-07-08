@@ -1,4 +1,4 @@
-package main
+package ocr
 
 import (
 	"encoding/xml"
@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-type TaskStruct struct {
+type taskStruct struct {
 	Text                    string `xml:",chardata"`
 	ID                      string `xml:"id,attr"`
 	RegistrationTime        string `xml:"registrationTime,attr"`
@@ -25,10 +25,10 @@ type TaskStruct struct {
 type taskResponse struct {
 	XMLName xml.Name   `xml:"response"`
 	Text    string     `xml:",chardata"`
-	Task    TaskStruct `xml:"task"`
+	Task    taskStruct `xml:"task"`
 }
 
-type AbbyyDocument struct {
+type abbyyDocument struct {
 	XMLName        xml.Name `xml:"document"`
 	Text           string   `xml:",chardata"`
 	Xmlns          string   `xml:"xmlns,attr"`
@@ -55,10 +55,10 @@ type AbbyyDocument struct {
 				Text string `xml:",chardata"`
 				Rect []struct {
 					Text string `xml:",chardata"`
-					L    string `xml:"l,attr"`
-					T    string `xml:"t,attr"`
-					R    string `xml:"r,attr"`
-					B    string `xml:"b,attr"`
+					L    int    `xml:"l,attr"`
+					T    int    `xml:"t,attr"`
+					R    int    `xml:"r,attr"`
+					B    int    `xml:"b,attr"`
 				} `xml:"rect"`
 			} `xml:"region"`
 			Text struct {
@@ -72,10 +72,10 @@ type AbbyyDocument struct {
 					Line        []struct {
 						Text       string `xml:",chardata"`
 						Baseline   string `xml:"baseline,attr"`
-						L          string `xml:"l,attr"`
-						T          string `xml:"t,attr"`
-						R          string `xml:"r,attr"`
-						B          string `xml:"b,attr"`
+						L          int    `xml:"l,attr"`
+						T          int    `xml:"t,attr"`
+						R          int    `xml:"r,attr"`
+						B          int    `xml:"b,attr"`
 						Formatting struct {
 							Text       string `xml:",chardata"`
 							Lang       string `xml:"lang,attr"`
@@ -97,11 +97,11 @@ type AbbyyDocument struct {
 	} `xml:"page"`
 }
 
-func (t *TaskStruct) isActive() bool {
+func (t *taskStruct) isActive() bool {
 	return t.Status == "InProgress" || t.Status == "Queued"
 }
 
-func processImage(imageReader io.Reader, username string, password string) (TaskStruct, error) {
+func processImage(imageReader io.Reader, username string, password string) (taskStruct, error) {
 	log.Println("processImage")
 	url := "https://cloud-eu.ocrsdk.com/processImage?language=Russian&exportFormat=xml"
 	method := "POST"
@@ -111,7 +111,7 @@ func processImage(imageReader io.Reader, username string, password string) (Task
 
 	if err != nil {
 		log.Println(err)
-		return TaskStruct{}, err
+		return taskStruct{}, err
 	}
 	req.SetBasicAuth(username, password)
 	req.Header.Add("Content-Type", "image/jpeg")
@@ -119,24 +119,24 @@ func processImage(imageReader io.Reader, username string, password string) (Task
 	res, err := client.Do(req)
 	if err != nil {
 		log.Println(err)
-		return TaskStruct{}, err
+		return taskStruct{}, err
 	}
 	defer res.Body.Close()
 
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		log.Println(err)
-		return TaskStruct{}, err
+		return taskStruct{}, err
 	}
 	var taskResponse taskResponse
 	if err := xml.Unmarshal(body, &taskResponse); err != nil {
 		log.Println(err)
-		return TaskStruct{}, err
+		return taskStruct{}, err
 	}
 	return taskResponse.Task, nil
 }
 
-func getTaskStatus(task TaskStruct, username string, password string) (TaskStruct, error) {
+func getTaskStatus(task taskStruct, username string, password string) (taskStruct, error) {
 	url := "https://cloud-eu.ocrsdk.com/getTaskStatus?taskId=" + task.ID
 	method := "GET"
 
@@ -169,37 +169,37 @@ func getTaskStatus(task TaskStruct, username string, password string) (TaskStruc
 	return taskResponse.Task, nil
 }
 
-func downloadResult(task TaskStruct) (AbbyyDocument, error) {
+func downloadResult(task taskStruct) (abbyyDocument, error) {
 	res, err := http.Get(task.ResultUrl)
 	if err != nil {
 		log.Println(err)
-		return AbbyyDocument{}, err
+		return abbyyDocument{}, err
 	}
 	defer res.Body.Close()
 
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		log.Println(err)
-		return AbbyyDocument{}, err
+		return abbyyDocument{}, err
 	}
-	var document AbbyyDocument
+	var document abbyyDocument
 	err = xml.Unmarshal(body, &document)
 	if err != nil {
 		log.Println(err)
-		return AbbyyDocument{}, err
+		return abbyyDocument{}, err
 	}
 	return document, nil
 }
 
-func RecognizeFile(imageReader io.Reader, username string, password string) (AbbyyDocument, error) {
+func recognizeFile(imageReader io.Reader, username string, password string) (abbyyDocument, error) {
 	log.Println("uploading...")
 	task, err := processImage(imageReader, username, password)
 	if err != nil {
 		log.Println("error creating task")
-		return AbbyyDocument{}, err
+		return abbyyDocument{}, err
 	}
 	if task.Status == "NotEnoughCredits" {
-		return AbbyyDocument{}, fmt.Errorf("not enough credits to process the document. please add more pages to your application's account")
+		return abbyyDocument{}, fmt.Errorf("not enough credits to process the document. please add more pages to your application's account")
 	}
 	log.Printf("id = %s", task.ID)
 	log.Printf("status = %s", task.Status)
@@ -217,6 +217,6 @@ func RecognizeFile(imageReader io.Reader, username string, password string) (Abb
 	if task.Status == "Completed" && task.ResultUrl != "" {
 		return downloadResult(task)
 	} else {
-		return AbbyyDocument{}, fmt.Errorf("error processing task")
+		return abbyyDocument{}, fmt.Errorf("error processing task")
 	}
 }

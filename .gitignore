@@ -25,8 +25,4 @@ frontend/yarn-error.log*
 
 .DS_Store
 
-.env
 db.sqlite
-
-yummy-bot
-/data/db.sqlite3

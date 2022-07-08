@@ -12,14 +12,15 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"yummy-bot/ocr"
 
 	"gopkg.in/telebot.v3/middleware"
 
 	tele "gopkg.in/telebot.v3"
 )
 
-type BotConfig struct {
-	Token         string
+type Configuration struct {
+	TelegramToken string
 	AdminId       int64
 	GroupId       int64
 	YummyId       int64
@@ -31,35 +32,33 @@ type BotConfig struct {
 
 var (
 	bot      *tele.Bot
-	cfg      *BotConfig
+	cfg      *Configuration
 	menuDate = time.Now()
 )
 
 func onRects(c tele.Context) error {
 	payload := c.Message().Payload
 	if payload == "" {
-		text := "https://pischule.github.io/yummy-bot-2/rects-tool/"
 		currentRects, err := GetRects()
 		if err != nil {
-			return c.Send(text)
+			currentRects = make([]ocr.FloatRect, 0)
 		}
-		jsonRects, err := json.Marshal(currentRects)
-		if err != nil {
-			return c.Send(text)
-		}
-		text = text + "\n`" + string(jsonRects) + "`"
-		return c.Send(text, &tele.SendOptions{
+		return c.Send(rectsToUri(currentRects), &tele.SendOptions{
 			ParseMode: tele.ModeMarkdown,
 		})
 	}
-	var rects []FloatRect
-	if err := json.Unmarshal([]byte(payload), &rects); err != nil {
+	rects, err := loadRectsFromUri(payload)
+	if err != nil {
 		return c.Send("parse error")
 	}
 	if len(rects) == 0 {
 		return c.Send("no rects")
 	}
-	SaveRects(payload)
+	rectsJson, err := json.Marshal(rects)
+	if err != nil {
+		return c.Send("rects marshal error")
+	}
+	SaveRects(string(rectsJson))
 	return c.Send("ok")
 }
 
@@ -91,7 +90,7 @@ func onPhoto(c tele.Context) error {
 		return err
 	}
 
-	items, err := GetTextFromImageAbbyy(reader, rects, cfg.AbbyyUsername, cfg.AbbyyPassword)
+	items, err := ocr.GetTextFromImageAbbyy(reader, rects, cfg.AbbyyUsername, cfg.AbbyyPassword)
 	if err != nil {
 		log.Println("could not extract lines from image")
 		return err
@@ -156,7 +155,7 @@ func onText(c tele.Context) error {
 }
 
 func PostOrderInChat(order OrderRequest) error {
-	secretKey := sha256.Sum256([]byte(cfg.Token))
+	secretKey := sha256.Sum256([]byte(cfg.TelegramToken))
 	secretKeyHmac := hmac.New(sha256.New, secretKey[:])
 	secretKeyHmac.Write([]byte(order.DataCheckString))
 	hash := secretKeyHmac.Sum(nil)
@@ -220,9 +219,9 @@ func onMenu(c tele.Context) error {
 	return c.Send(fmt.Sprintf("Save %d items", len(lines)))
 }
 
-func RunBot(config BotConfig) {
+func RunBot(config Configuration) {
 	b, err := tele.NewBot(tele.Settings{
-		Token:  config.Token,
+		Token:  config.TelegramToken,
 		Poller: &tele.LongPoller{Timeout: 10 * time.Second},
 	})
 	if err != nil {
