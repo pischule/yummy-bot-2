@@ -58,6 +58,27 @@ func Test_extractLines1(t *testing.T) {
 				"филе птицы в сыре",
 			},
 		},
+		{
+			name: "09072022",
+			args: args{
+				filePath: "testdata/09072022.xml",
+				url:      "http://localhost/?r=124.416.319.107.508.415.310.108.138.574.296.96.511.573.302.100.145.713.327.111.517.712.292.114",
+			},
+			want: []string{
+				"салат из свеклы с черносливом",
+				"салат «столичный»",
+				"салат «венгерский»",
+				"щи из свежей капусты с цыпленком",
+				"картофель запеченный под сырной корочкой",
+				"свекла тушеная в сметане с грецким орехом )",
+				"спагетти с соусом болоньезе",
+				"рыба запечённая с томатом и сыром",
+				"котлета куриная паровая с сыром",
+				"«стожок»",
+				"филе птицы в белках",
+				"котлета отбивная по- домашнему",
+			},
+		},
 	}
 
 	for _, tt := range tests {
@@ -70,7 +91,7 @@ func Test_extractLines1(t *testing.T) {
 			got := extractLines(doc, relativeRects)
 			fmt.Println(strings.Join(got, "\n"))
 			if len(got) != len(tt.want) {
-				t.Errorf("extractLines() returned len %v, want %v", len(got), len(relativeRects))
+				t.Errorf("extractLines() returned len %v, want %v", len(got), len(tt.want))
 				return
 			}
 			for i, item := range got {

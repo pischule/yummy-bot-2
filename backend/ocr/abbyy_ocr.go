@@ -28,10 +28,14 @@ func postProcessTextAbbyy(text string) []string {
 	text = strings.ToLower(text)
 	text = strings.ReplaceAll(text, ")", ")\n")
 	lines := strings.Split(text, "\n")
-	re := regexp.MustCompile(`^(.*?)(\(.+)?$`)
+	re := regexp.MustCompile(`^(\D*?)(\(.+)?$`)
 	resultLines := make([]string, 0, 1)
 	for _, line := range lines {
-		line = re.ReplaceAllString(line, `$1`)
+		submatch := re.FindStringSubmatch(line)
+		if len(submatch) < 2 {
+			continue
+		}
+		line = submatch[1]
 		line = strings.Join(strings.Fields(line), " ")
 		if line == "" {
 			continue

@@ -1,0 +1,1559 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<document xmlns="http://www.abbyy.com/FineReader_xml/FineReader10-schema-v1.xml" version="1.0"
+          producer="ABBYY FineReader Engine 12" languages="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.abbyy.com/FineReader_xml/FineReader10-schema-v1.xml http://www.abbyy.com/FineReader_xml/FineReader10-schema-v1.xml">
+    <page width="800" height="1200" resolution="100" originalCoords="1">
+        <block blockType="Text" blockName="" l="291" t="165" r="373" b="189">
+            <region>
+                <rect l="291" t="165" r="373" b="189"/>
+            </region>
+            <text>
+                <par lineSpacing="2410">
+                    <line baseline="185" l="293" t="166" r="371" b="186">
+                        <formatting lang="Russian">
+                            <charParams l="293" t="166" r="308" b="186">2</charParams>
+                            <charParams l="310" t="170" r="325" b="186">о</charParams>
+                            <charParams l="328" t="170" r="343" b="186">о</charParams>
+                            <charParams l="346" t="171" r="371" b="186">т</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="112" t="218" r="279" b="238">
+            <region>
+                <rect l="112" t="218" r="279" b="238"/>
+            </region>
+            <text>
+                <par lineSpacing="1490">
+                    <line baseline="231" l="113" t="220" r="276" b="235">
+                        <formatting lang="Russian">
+                            <charParams l="113" t="220" r="122" b="231">С</charParams>
+                            <charParams l="124" t="222" r="135" b="231">ы</charParams>
+                            <charParams l="137" t="222" r="145" b="235">р</charParams>
+                            <charParams l="148" t="222" r="156" b="231">н</charParams>
+                            <charParams l="158" t="222" r="167" b="231">и</charParams>
+                            <charParams l="170" t="222" r="178" b="231">к</charParams>
+                            <charParams l="180" t="222" r="189" b="231">и</charParams>
+                            <charParams l="190" t="222" r="194" b="231"></charParams>
+                            <charParams l="195" t="222" r="201" b="231">с</charParams>
+                            <charParams l="202" t="222" r="206" b="234"></charParams>
+                            <charParams l="207" t="222" r="217" b="234">д</charParams>
+                            <charParams l="217" t="222" r="230" b="231">ж</charParams>
+                            <charParams l="232" t="222" r="240" b="231">е</charParams>
+                            <charParams l="242" t="222" r="253" b="231">м</charParams>
+                            <charParams l="255" t="222" r="263" b="231">о</charParams>
+                            <charParams l="265" t="222" r="276" b="231">м</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="334" t="218" r="360" b="236">
+            <region>
+                <rect l="334" t="218" r="360" b="236"/>
+            </region>
+            <text>
+                <par lineSpacing="1490">
+                    <line baseline="231" l="336" t="219" r="357" b="233">
+                        <formatting lang="Russian">
+                            <charParams l="336" t="219" r="343" b="231">3</charParams>
+                            <charParams l="344" t="229" r="347" b="233" suspicious="1">,</charParams>
+                            <charParams l="349" t="219" r="357" b="231">5</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="668" t="218" r="694" b="236">
+            <region>
+                <rect l="668" t="218" r="694" b="236"/>
+            </region>
+            <text>
+                <par lineSpacing="1490">
+                    <line baseline="231" l="669" t="220" r="691" b="233">
+                        <formatting lang="Russian">
+                            <charParams l="669" t="220" r="678" b="231">4</charParams>
+                            <charParams l="679" t="229" r="681" b="233">,</charParams>
+                            <charParams l="684" t="220" r="691" b="231">5</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="112" t="251" r="300" b="272">
+            <region>
+                <rect l="112" t="251" r="300" b="272"/>
+            </region>
+            <text>
+                <par lineSpacing="1490">
+                    <line baseline="265" l="113" t="252" r="297" b="269">
+                        <formatting lang="Russian">
+                            <charParams l="113" t="254" r="122" b="265">С</charParams>
+                            <charParams l="124" t="256" r="135" b="265">ы</charParams>
+                            <charParams l="137" t="256" r="145" b="269">р</charParams>
+                            <charParams l="148" t="256" r="156" b="265">н</charParams>
+                            <charParams l="158" t="256" r="167" b="265">и</charParams>
+                            <charParams l="170" t="256" r="177" b="265">к</charParams>
+                            <charParams l="180" t="256" r="189" b="265">и</charParams>
+                            <charParams l="190" t="256" r="194" b="265"></charParams>
+                            <charParams l="195" t="256" r="201" b="265">с</charParams>
+                            <charParams l="203" t="256" r="211" b="265">о</charParams>
+                            <charParams l="212" t="256" r="216" b="265"></charParams>
+                            <charParams l="217" t="256" r="224" b="265">с</charParams>
+                            <charParams l="226" t="256" r="237" b="265">м</charParams>
+                            <charParams l="239" t="256" r="247" b="265">е</charParams>
+                            <charParams l="248" t="256" r="256" b="265">т</charParams>
+                            <charParams l="257" t="256" r="265" b="265">а</charParams>
+                            <charParams l="267" t="256" r="276" b="265">н</charParams>
+                            <charParams l="278" t="256" r="286" b="265">о</charParams>
+                            <charParams l="288" t="252" r="297" b="265">й</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="334" t="252" r="360" b="270">
+            <region>
+                <rect l="334" t="252" r="360" b="270"/>
+            </region>
+            <text>
+                <par lineSpacing="1490">
+                    <line baseline="265" l="336" t="253" r="357" b="267">
+                        <formatting lang="Russian">
+                            <charParams l="336" t="253" r="343" b="265">3</charParams>
+                            <charParams l="344" t="263" r="347" b="267">,</charParams>
+                            <charParams l="349" t="253" r="357" b="265">5</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="668" t="269" r="694" b="287">
+            <region>
+                <rect l="668" t="269" r="694" b="287"/>
+            </region>
+            <text>
+                <par align="Right" lineSpacing="1490">
+                    <line baseline="282" l="669" t="270" r="691" b="284">
+                        <formatting lang="Russian">
+                            <charParams l="669" t="270" r="677" b="282">6</charParams>
+                            <charParams l="679" t="280" r="681" b="284">,</charParams>
+                            <charParams l="683" t="271" r="691" b="282">9</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="112" t="286" r="297" b="306">
+            <region>
+                <rect l="112" t="286" r="297" b="306"/>
+            </region>
+            <text>
+                <par lineSpacing="1490">
+                    <line baseline="299" l="114" t="288" r="294" b="303">
+                        <formatting lang="Russian">
+                            <charParams l="114" t="288" r="122" b="299">Б</charParams>
+                            <charParams l="123" t="290" r="132" b="299">л</charParams>
+                            <charParams l="134" t="290" r="143" b="299">и</charParams>
+                            <charParams l="146" t="290" r="154" b="299">н</charParams>
+                            <charParams l="156" t="290" r="164" b="299">ч</charParams>
+                            <charParams l="167" t="290" r="176" b="299">и</charParams>
+                            <charParams l="178" t="290" r="186" b="299">к</charParams>
+                            <charParams l="188" t="290" r="197" b="299">и</charParams>
+                            <charParams l="198" t="290" r="202" b="299"></charParams>
+                            <charParams l="203" t="290" r="210" b="299">с</charParams>
+                            <charParams l="211" t="290" r="214" b="299"></charParams>
+                            <charParams l="215" t="290" r="224" b="299">т</charParams>
+                            <charParams l="225" t="290" r="233" b="299">в</charParams>
+                            <charParams l="235" t="290" r="243" b="299">о</charParams>
+                            <charParams l="245" t="290" r="253" b="303">р</charParams>
+                            <charParams l="255" t="290" r="263" b="299">о</charParams>
+                            <charParams l="265" t="290" r="271" b="299">г</charParams>
+                            <charParams l="273" t="290" r="281" b="299">о</charParams>
+                            <charParams l="283" t="290" r="294" b="299">м</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="334" t="286" r="360" b="304">
+            <region>
+                <rect l="334" t="286" r="360" b="304"/>
+            </region>
+            <text>
+                <par lineSpacing="1490">
+                    <line baseline="299" l="335" t="287" r="357" b="301">
+                        <formatting lang="Russian">
+                            <charParams l="335" t="287" r="344" b="299">4</charParams>
+                            <charParams l="344" t="297" r="347" b="301">,</charParams>
+                            <charParams l="349" t="287" r="357" b="299">5</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="668" t="320" r="694" b="338">
+            <region>
+                <rect l="668" t="320" r="694" b="338"/>
+            </region>
+            <text>
+                <par lineSpacing="1490">
+                    <line baseline="333" l="669" t="322" r="691" b="335">
+                        <formatting lang="Russian">
+                            <charParams l="669" t="322" r="677" b="333">4</charParams>
+                            <charParams l="679" t="331" r="681" b="335">,</charParams>
+                            <charParams l="683" t="322" r="691" b="333">8</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="338" t="452" r="460" b="487">
+            <region>
+                <rect l="338" t="452" r="460" b="487"/>
+            </region>
+            <text>
+                <par align="Center" lineSpacing="3330">
+                    <line baseline="484" l="340" t="455" r="457" b="485">
+                        <formatting lang="Russian">
+                            <charParams l="340" t="455" r="355" b="485">С</charParams>
+                            <charParams l="360" t="455" r="374" b="484">А</charParams>
+                            <charParams l="380" t="455" r="394" b="484">П</charParams>
+                            <charParams l="400" t="455" r="414" b="484">А</charParams>
+                            <charParams l="418" t="455" r="433" b="484">Т</charParams>
+                            <charParams l="435" t="455" r="457" b="484">Ы</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="361" t="529" r="373" b="545">
+            <region>
+                <rect l="361" t="529" r="373" b="545"/>
+            </region>
+            <text>
+                <par align="Justified" lineSpacing="1260">
+                    <line baseline="542" l="362" t="531" r="369" b="542">
+                        <formatting lang="Russian">
+                            <charParams l="362" t="531" r="369" b="542">2</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="361" t="570" r="385" b="587">
+            <region>
+                <rect l="361" t="570" r="385" b="587"/>
+            </region>
+            <text>
+                <par lineSpacing="1260">
+                    <line baseline="583" l="362" t="572" r="382" b="584">
+                        <formatting lang="Russian">
+                            <charParams l="362" t="572" r="369" b="583">2</charParams>
+                            <charParams l="371" t="581" r="373" b="584">,</charParams>
+                            <charParams l="375" t="572" r="382" b="583">6</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="141" t="652" r="345" b="686">
+            <region>
+                <rect l="141" t="652" r="345" b="686"/>
+            </region>
+            <text>
+                <par align="Center" leftIndent="-100" lineSpacing="3220">
+                    <line baseline="680" l="143" t="654" r="343" b="683">
+                        <formatting lang="Russian">
+                            <charParams l="143" t="655" r="155" b="679">п</charParams>
+                            <charParams l="159" t="654" r="172" b="679">е</charParams>
+                            <charParams l="176" t="655" r="188" b="679" suspicious="1">р</charParams>
+                            <charParams l="191" t="655" r="204" b="679" suspicious="1">в</charParams>
+                            <charParams l="208" t="655" r="226" b="679">ы</charParams>
+                            <charParams l="230" t="654" r="242" b="680">е</charParams>
+                            <charParams l="243" t="654" r="255" b="680"></charParams>
+                            <charParams l="256" t="655" r="269" b="679" suspicious="1">б</charParams>
+                            <charParams l="272" t="654" r="285" b="679" suspicious="1">п</charParams>
+                            <charParams l="289" t="654" r="308" b="679" suspicious="1">ю</charParams>
+                            <charParams l="310" t="655" r="328" b="683" suspicious="1">д</charParams>
+                            <charParams l="330" t="654" r="343" b="679" suspicious="1">а</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="484" t="653" r="606" b="682">
+            <region>
+                <rect l="484" t="653" r="606" b="682"/>
+            </region>
+            <text>
+                <par align="Justified" lineSpacing="1950">
+                    <line baseline="680" l="486" t="654" r="603" b="680">
+                        <formatting lang="Russian">
+                            <charParams l="486" t="654" r="498" b="679">Г</charParams>
+                            <charParams l="501" t="654" r="514" b="679">А</charParams>
+                            <charParams l="518" t="655" r="530" b="679">Р</charParams>
+                            <charParams l="533" t="655" r="546" b="679">Н</charParams>
+                            <charParams l="550" t="654" r="565" b="680" suspicious="1">И</charParams>
+                            <charParams l="569" t="655" r="582" b="679">Р</charParams>
+                            <charParams l="585" t="655" r="603" b="680">Ы</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="653" t="694" r="677" b="712">
+            <region>
+                <rect l="653" t="694" r="677" b="712"/>
+            </region>
+            <text>
+                <par lineSpacing="1260">
+                    <line baseline="707" l="655" t="696" r="674" b="708">
+                        <formatting lang="Russian">
+                            <charParams l="655" t="696" r="662" b="707">2</charParams>
+                            <charParams l="663" t="705" r="665" b="708">,</charParams>
+                            <charParams l="667" t="696" r="674" b="707">3</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="119" t="699" r="298" b="730">
+            <region>
+                <rect l="119" t="699" r="298" b="730"/>
+            </region>
+            <text>
+                <par lineSpacing="936">
+                    <line baseline="712" l="120" t="700" r="295" b="716">
+                        <formatting lang="Russian">
+                            <charParams l="120" t="701" r="134" b="714">Щ</charParams>
+                            <charParams l="135" t="704" r="143" b="712">и</charParams>
+                            <charParams l="144" t="704" r="148" b="712"></charParams>
+                            <charParams l="149" t="704" r="157" b="712">и</charParams>
+                            <charParams l="158" t="703" r="164" b="712">з</charParams>
+                            <charParams l="165" t="703" r="168" b="712"></charParams>
+                            <charParams l="169" t="703" r="175" b="712">с</charParams>
+                            <charParams l="177" t="704" r="184" b="712">в</charParams>
+                            <charParams l="185" t="703" r="192" b="712">е</charParams>
+                            <charParams l="193" t="704" r="203" b="712">ж</charParams>
+                            <charParams l="205" t="703" r="212" b="712">е</charParams>
+                            <charParams l="213" t="700" r="221" b="712">й</charParams>
+                            <charParams l="222" t="700" r="226" b="712"></charParams>
+                            <charParams l="227" t="704" r="233" b="712">к</charParams>
+                            <charParams l="234" t="704" r="241" b="712">а</charParams>
+                            <charParams l="243" t="703" r="251" b="712">п</charParams>
+                            <charParams l="251" t="704" r="259" b="716">у</charParams>
+                            <charParams l="259" t="703" r="265" b="712">с</charParams>
+                            <charParams l="266" t="703" r="273" b="712">т</charParams>
+                            <charParams l="274" t="704" r="284" b="712">ы</charParams>
+                            <charParams l="285" t="703" r="288" b="712"></charParams>
+                            <charParams l="289" t="703" r="295" b="712">с</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="725" l="120" t="714" r="265" b="727">
+                        <formatting lang="Russian">
+                            <charParams l="120" t="717" r="128" b="727">ц</charParams>
+                            <charParams l="129" t="717" r="139" b="725">ы</charParams>
+                            <charParams l="141" t="716" r="148" b="725">п</charParams>
+                            <charParams l="150" t="717" r="157" b="725">л</charParams>
+                            <charParams l="159" t="717" r="166" b="725">е</charParams>
+                            <charParams l="167" t="717" r="175" b="725">н</charParams>
+                            <charParams l="177" t="717" r="183" b="725">к</charParams>
+                            <charParams l="184" t="716" r="192" b="725">о</charParams>
+                            <charParams l="194" t="717" r="203" b="725">м</charParams>
+                            <charParams l="204" t="714" r="207" b="727"></charParams>
+                            <charParams l="208" t="714" r="212" b="727">(</charParams>
+                            <charParams l="213" t="714" r="220" b="725">2</charParams>
+                            <charParams l="222" t="714" r="229" b="725">5</charParams>
+                            <charParams l="230" t="714" r="238" b="725">0</charParams>
+                            <charParams l="238" t="714" r="243" b="725">/</charParams>
+                            <charParams l="244" t="714" r="251" b="725">2</charParams>
+                            <charParams l="253" t="715" r="260" b="725" suspicious="1">5</charParams>
+                            <charParams l="261" t="714" r="265" b="727">)</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="361" t="699" r="385" b="717">
+            <region>
+                <rect l="361" t="699" r="385" b="717"/>
+            </region>
+            <text>
+                <par lineSpacing="1260">
+                    <line baseline="712" l="362" t="701" r="382" b="713">
+                        <formatting lang="Russian">
+                            <charParams l="362" t="701" r="370" b="712">2</charParams>
+                            <charParams l="371" t="710" r="373" b="713">,</charParams>
+                            <charParams l="375" t="701" r="382" b="712">5</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="654" t="735" r="677" b="753">
+            <region>
+                <rect l="654" t="735" r="677" b="753"/>
+            </region>
+            <text>
+                <par lineSpacing="1260">
+                    <line baseline="748" l="656" t="737" r="674" b="749">
+                        <formatting lang="Russian">
+                            <charParams l="656" t="737" r="660" b="748">1</charParams>
+                            <charParams l="663" t="746" r="665" b="749" suspicious="1">.</charParams>
+                            <charParams l="667" t="737" r="674" b="748">8</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="654" t="776" r="677" b="793">
+            <region>
+                <rect l="654" t="776" r="677" b="793"/>
+            </region>
+            <text>
+                <par lineSpacing="1260">
+                    <line baseline="789" l="656" t="778" r="674" b="790">
+                        <formatting lang="Russian">
+                            <charParams l="656" t="778" r="660" b="789">1</charParams>
+                            <charParams l="663" t="787" r="665" b="790" suspicious="1">.</charParams>
+                            <charParams l="667" t="778" r="674" b="789">9</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="314" t="816" r="502" b="847">
+            <region>
+                <rect l="314" t="816" r="502" b="847"/>
+            </region>
+            <text>
+                <par align="Center" leftIndent="-100" lineSpacing="3220">
+                    <line baseline="841" l="316" t="817" r="499" b="845">
+                        <formatting lang="Russian">
+                            <charParams l="316" t="818" r="327" b="841">в</charParams>
+                            <charParams l="330" t="818" r="342" b="841">т</charParams>
+                            <charParams l="344" t="818" r="356" b="841" suspicious="1">о</charParams>
+                            <charParams l="360" t="818" r="371" b="841" suspicious="1">р</charParams>
+                            <charParams l="374" t="818" r="391" b="841">ы</charParams>
+                            <charParams l="395" t="817" r="406" b="841">е</charParams>
+                            <charParams l="407" t="817" r="418" b="841"></charParams>
+                            <charParams l="419" t="818" r="430" b="841">Б</charParams>
+                            <charParams l="434" t="818" r="446" b="841">П</charParams>
+                            <charParams l="449" t="817" r="467" b="841">Ю</charParams>
+                            <charParams l="469" t="818" r="485" b="845">Д</charParams>
+                            <charParams l="487" t="818" r="499" b="841">А</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="377" t="878" r="402" b="895">
+            <region>
+                <rect l="377" t="878" r="402" b="895"/>
+            </region>
+            <text>
+                <par lineSpacing="1260">
+                    <line baseline="891" l="379" t="880" r="399" b="892">
+                        <formatting lang="Russian">
+                            <charParams l="379" t="880" r="387" b="891">4</charParams>
+                            <charParams l="388" t="889" r="390" b="892">,</charParams>
+                            <charParams l="392" t="880" r="399" b="891">5</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="653" t="916" r="678" b="934">
+            <region>
+                <rect l="653" t="916" r="678" b="934"/>
+            </region>
+            <text>
+                <par lineSpacing="1260">
+                    <line baseline="929" l="655" t="918" r="675" b="930">
+                        <formatting lang="Russian">
+                            <charParams l="655" t="918" r="663" b="929">4</charParams>
+                            <charParams l="664" t="927" r="666" b="930">,</charParams>
+                            <charParams l="668" t="918" r="675" b="929">9</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="378" t="918" r="402" b="936">
+            <region>
+                <rect l="378" t="918" r="402" b="936"/>
+            </region>
+            <text>
+                <par lineSpacing="1260">
+                    <line baseline="931" l="380" t="920" r="399" b="933">
+                        <formatting lang="Russian">
+                            <charParams l="380" t="920" r="387" b="931">3</charParams>
+                            <charParams l="388" t="929" r="390" b="933">,</charParams>
+                            <charParams l="392" t="920" r="399" b="931">5</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="378" t="959" r="402" b="977">
+            <region>
+                <rect l="378" t="959" r="402" b="977"/>
+            </region>
+            <text>
+                <par lineSpacing="1260">
+                    <line baseline="972" l="380" t="961" r="399" b="974">
+                        <formatting lang="Russian">
+                            <charParams l="380" t="961" r="387" b="972">5</charParams>
+                            <charParams l="388" t="970" r="390" b="974">,</charParams>
+                            <charParams l="392" t="961" r="399" b="972">2</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="420" t="312" r="620" b="349">
+            <region>
+                <rect l="420" t="312" r="620" b="349"/>
+            </region>
+            <text>
+                <par lineSpacing="1152">
+                    <line baseline="326" l="421" t="313" r="617" b="330">
+                        <formatting lang="Russian">
+                            <charParams l="421" t="314" r="429" b="326">Б</charParams>
+                            <charParams l="430" t="317" r="439" b="326">л</charParams>
+                            <charParams l="442" t="317" r="451" b="326">и</charParams>
+                            <charParams l="453" t="317" r="462" b="326">н</charParams>
+                            <charParams l="464" t="317" r="472" b="326">ч</charParams>
+                            <charParams l="474" t="317" r="484" b="326">и</charParams>
+                            <charParams l="486" t="317" r="494" b="326">к</charParams>
+                            <charParams l="496" t="317" r="505" b="326">и</charParams>
+                            <charParams l="506" t="317" r="510" b="326"></charParams>
+                            <charParams l="511" t="317" r="518" b="326">с</charParams>
+                            <charParams l="519" t="317" r="523" b="326"></charParams>
+                            <charParams l="524" t="317" r="532" b="326">к</charParams>
+                            <charParams l="533" t="317" r="541" b="330">у</charParams>
+                            <charParams l="543" t="317" r="551" b="330">р</charParams>
+                            <charParams l="553" t="317" r="561" b="326">о</charParams>
+                            <charParams l="563" t="317" r="571" b="326">ч</charParams>
+                            <charParams l="573" t="317" r="581" b="326">к</charParams>
+                            <charParams l="583" t="317" r="591" b="326">о</charParams>
+                            <charParams l="593" t="313" r="603" b="326">й</charParams>
+                            <charParams l="604" t="313" r="608" b="326"></charParams>
+                            <charParams l="609" t="317" r="617" b="326">в</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="342" l="421" t="333" r="595" b="346">
+                        <formatting lang="Russian">
+                            <charParams l="421" t="333" r="429" b="342">к</charParams>
+                            <charParams l="431" t="333" r="440" b="342">и</charParams>
+                            <charParams l="442" t="333" r="449" b="342">с</charParams>
+                            <charParams l="450" t="333" r="459" b="342">л</charParams>
+                            <charParams l="461" t="333" r="470" b="342">о</charParams>
+                            <charParams l="470" t="336" r="474" b="339">-</charParams>
+                            <charParams l="476" t="333" r="483" b="342">с</charParams>
+                            <charParams l="483" t="333" r="493" b="342">л</charParams>
+                            <charParams l="495" t="333" r="502" b="342">а</charParams>
+                            <charParams l="504" t="333" r="514" b="345">д</charParams>
+                            <charParams l="515" t="333" r="523" b="342">к</charParams>
+                            <charParams l="525" t="333" r="533" b="342">о</charParams>
+                            <charParams l="535" t="333" r="546" b="342">м</charParams>
+                            <charParams l="547" t="333" r="551" b="342"></charParams>
+                            <charParams l="552" t="333" r="559" b="342">с</charParams>
+                            <charParams l="561" t="333" r="569" b="342">о</charParams>
+                            <charParams l="570" t="333" r="578" b="346">у</charParams>
+                            <charParams l="580" t="333" r="586" b="342">с</charParams>
+                            <charParams l="587" t="333" r="595" b="342">е</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="435" t="916" r="597" b="949">
+            <region>
+                <rect l="435" t="916" r="597" b="949"/>
+            </region>
+            <text>
+                <par lineSpacing="1008">
+                    <line baseline="929" l="438" t="917" r="594" b="929">
+                        <formatting lang="Russian">
+                            <charParams l="438" t="918" r="445" b="929">К</charParams>
+                            <charParams l="446" t="920" r="454" b="929">о</charParams>
+                            <charParams l="455" t="920" r="461" b="929">т</charParams>
+                            <charParams l="462" t="920" r="469" b="929">л</charParams>
+                            <charParams l="471" t="920" r="478" b="929">е</charParams>
+                            <charParams l="479" t="920" r="485" b="929">т</charParams>
+                            <charParams l="486" t="920" r="493" b="929">а</charParams>
+                            <charParams l="494" t="920" r="498" b="929"></charParams>
+                            <charParams l="499" t="920" r="507" b="929">о</charParams>
+                            <charParams l="508" t="920" r="514" b="929">т</charParams>
+                            <charParams l="515" t="917" r="522" b="929" suspicious="1">б</charParams>
+                            <charParams l="524" t="921" r="532" b="929">и</charParams>
+                            <charParams l="534" t="920" r="541" b="929">в</charParams>
+                            <charParams l="542" t="921" r="550" b="929">н</charParams>
+                            <charParams l="551" t="920" r="558" b="929">а</charParams>
+                            <charParams l="560" t="920" r="566" b="929">я</charParams>
+                            <charParams l="567" t="920" r="571" b="929"></charParams>
+                            <charParams l="572" t="920" r="580" b="929">п</charParams>
+                            <charParams l="581" t="920" r="589" b="929">о</charParams>
+                            <charParams l="591" t="924" r="594" b="926">-</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="943" l="436" t="932" r="562" b="947">
+                        <formatting lang="Russian">
+                            <charParams l="436" t="934" r="445" b="946">д</charParams>
+                            <charParams l="446" t="934" r="454" b="943">о</charParams>
+                            <charParams l="455" t="935" r="464" b="943">м</charParams>
+                            <charParams l="466" t="934" r="473" b="943">а</charParams>
+                            <charParams l="474" t="935" r="486" b="943">ш</charParams>
+                            <charParams l="488" t="935" r="495" b="943">н</charParams>
+                            <charParams l="497" t="934" r="504" b="943">е</charParams>
+                            <charParams l="506" t="935" r="515" b="943">м</charParams>
+                            <charParams l="516" t="935" r="523" b="947">у</charParams>
+                            <charParams l="524" t="932" r="527" b="947"></charParams>
+                            <charParams l="528" t="932" r="531" b="945">(</charParams>
+                            <charParams l="533" t="932" r="537" b="943" suspicious="1">1</charParams>
+                            <charParams l="541" t="932" r="548" b="943" suspicious="1">0</charParams>
+                            <charParams l="549" t="932" r="557" b="943">0</charParams>
+                            <charParams l="558" t="932" r="562" b="945">)</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="419" t="216" r="623" b="252">
+            <region>
+                <rect l="419" t="216" r="623" b="252"/>
+            </region>
+            <text>
+                <par align="Justified" lineSpacing="1152">
+                    <line baseline="230" l="422" t="217" r="620" b="230">
+                        <formatting lang="Russian">
+                            <charParams l="422" t="218" r="429" b="230">Б</charParams>
+                            <charParams l="430" t="221" r="439" b="230">л</charParams>
+                            <charParams l="442" t="221" r="451" b="230">и</charParams>
+                            <charParams l="453" t="221" r="462" b="230">н</charParams>
+                            <charParams l="464" t="221" r="472" b="230">ч</charParams>
+                            <charParams l="474" t="221" r="483" b="230">и</charParams>
+                            <charParams l="486" t="221" r="494" b="230">к</charParams>
+                            <charParams l="496" t="221" r="505" b="230">и</charParams>
+                            <charParams l="506" t="221" r="510" b="230"></charParams>
+                            <charParams l="511" t="221" r="518" b="230">с</charParams>
+                            <charParams l="519" t="221" r="523" b="230"></charParams>
+                            <charParams l="524" t="221" r="532" b="230">в</charParams>
+                            <charParams l="534" t="221" r="542" b="230">е</charParams>
+                            <charParams l="543" t="221" r="551" b="230">т</charParams>
+                            <charParams l="552" t="221" r="560" b="230">ч</charParams>
+                            <charParams l="563" t="221" r="572" b="230">и</charParams>
+                            <charParams l="574" t="221" r="582" b="230">н</charParams>
+                            <charParams l="585" t="221" r="593" b="230">о</charParams>
+                            <charParams l="595" t="217" r="604" b="230">й</charParams>
+                            <charParams l="605" t="217" r="610" b="230"></charParams>
+                            <charParams l="611" t="221" r="620" b="230">и</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="246" l="421" t="237" r="474" b="249">
+                        <formatting lang="Russian">
+                            <charParams l="421" t="237" r="428" b="246">с</charParams>
+                            <charParams l="429" t="237" r="441" b="246">ы</charParams>
+                            <charParams l="443" t="237" r="451" b="249">р</charParams>
+                            <charParams l="453" t="237" r="461" b="246">о</charParams>
+                            <charParams l="463" t="237" r="474" b="246">м</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="420" t="264" r="663" b="301">
+            <region>
+                <rect l="420" t="264" r="663" b="301"/>
+            </region>
+            <text>
+                <par lineSpacing="1152">
+                    <line baseline="278" l="422" t="266" r="660" b="282">
+                        <formatting lang="Russian">
+                            <charParams l="422" t="266" r="429" b="278">Б</charParams>
+                            <charParams l="430" t="269" r="439" b="278">л</charParams>
+                            <charParams l="442" t="269" r="451" b="278">и</charParams>
+                            <charParams l="453" t="269" r="462" b="278">н</charParams>
+                            <charParams l="464" t="269" r="472" b="278">ч</charParams>
+                            <charParams l="474" t="269" r="483" b="278">и</charParams>
+                            <charParams l="486" t="269" r="494" b="278">к</charParams>
+                            <charParams l="496" t="269" r="505" b="278">и</charParams>
+                            <charParams l="506" t="269" r="510" b="278"></charParams>
+                            <charParams l="511" t="269" r="518" b="278">с</charParams>
+                            <charParams l="519" t="269" r="523" b="278"></charParams>
+                            <charParams l="524" t="269" r="532" b="278">к</charParams>
+                            <charParams l="534" t="269" r="542" b="282">р</charParams>
+                            <charParams l="544" t="269" r="551" b="278">а</charParams>
+                            <charParams l="553" t="269" r="560" b="278">с</charParams>
+                            <charParams l="562" t="269" r="570" b="278">н</charParams>
+                            <charParams l="572" t="269" r="580" b="278">о</charParams>
+                            <charParams l="582" t="266" r="592" b="278">й</charParams>
+                            <charParams l="593" t="266" r="597" b="282"></charParams>
+                            <charParams l="598" t="269" r="606" b="282">р</charParams>
+                            <charParams l="608" t="269" r="619" b="278">ы</charParams>
+                            <charParams l="621" t="266" r="630" b="278">б</charParams>
+                            <charParams l="632" t="269" r="640" b="278">к</charParams>
+                            <charParams l="641" t="269" r="650" b="278">о</charParams>
+                            <charParams l="651" t="266" r="660" b="278">й</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="294" l="421" t="285" r="595" b="298">
+                        <formatting lang="Russian">
+                            <charParams l="421" t="285" r="430" b="294">и</charParams>
+                            <charParams l="431" t="285" r="435" b="294"></charParams>
+                            <charParams l="436" t="285" r="444" b="294">т</charParams>
+                            <charParams l="446" t="285" r="454" b="294">в</charParams>
+                            <charParams l="456" t="285" r="464" b="294">о</charParams>
+                            <charParams l="466" t="285" r="474" b="297">р</charParams>
+                            <charParams l="476" t="285" r="484" b="294">о</charParams>
+                            <charParams l="485" t="285" r="498" b="294">ж</charParams>
+                            <charParams l="500" t="285" r="508" b="294">н</charParams>
+                            <charParams l="511" t="285" r="522" b="294">ы</charParams>
+                            <charParams l="524" t="285" r="535" b="294">м</charParams>
+                            <charParams l="536" t="285" r="540" b="294"></charParams>
+                            <charParams l="541" t="285" r="548" b="294">с</charParams>
+                            <charParams l="550" t="285" r="561" b="294">ы</charParams>
+                            <charParams l="564" t="285" r="572" b="298">р</charParams>
+                            <charParams l="573" t="285" r="582" b="294">о</charParams>
+                            <charParams l="584" t="285" r="595" b="294">м</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="111" t="320" r="360" b="353">
+            <region>
+                <rect l="111" t="320" r="360" b="353"/>
+            </region>
+            <text>
+                <par align="Justified" lineSpacing="1224">
+                    <line baseline="333" l="114" t="321" r="357" b="336">
+                        <formatting lang="Russian">
+                            <charParams l="114" t="322" r="122" b="333">Б</charParams>
+                            <charParams l="123" t="324" r="132" b="333">л</charParams>
+                            <charParams l="134" t="324" r="143" b="333">и</charParams>
+                            <charParams l="146" t="324" r="154" b="333">н</charParams>
+                            <charParams l="156" t="324" r="164" b="333">ч</charParams>
+                            <charParams l="167" t="324" r="176" b="333">и</charParams>
+                            <charParams l="178" t="324" r="186" b="333">к</charParams>
+                            <charParams l="188" t="324" r="197" b="333">и</charParams>
+                            <charParams l="198" t="324" r="202" b="333"></charParams>
+                            <charParams l="203" t="324" r="210" b="333">с</charParams>
+                            <charParams l="211" t="324" r="215" b="333"></charParams>
+                            <charParams l="216" t="324" r="229" b="333">ш</charParams>
+                            <charParams l="232" t="324" r="240" b="333">о</charParams>
+                            <charParams l="242" t="324" r="249" b="333">к</charParams>
+                            <charParams l="251" t="324" r="260" b="333">о</charParams>
+                            <charParams l="260" t="324" r="270" b="333">л</charParams>
+                            <charParams l="272" t="324" r="279" b="333">а</charParams>
+                            <charParams l="281" t="324" r="291" b="336">д</charParams>
+                            <charParams l="292" t="324" r="301" b="333">н</charParams>
+                            <charParams l="303" t="324" r="314" b="333">ы</charParams>
+                            <charParams l="316" t="324" r="328" b="333">м</charParams>
+                            <charParams l="329" t="321" r="334" b="333"></charParams>
+                            <charParams l="335" t="321" r="343" b="333">4</charParams>
+                            <charParams l="344" t="331" r="347" b="335">,</charParams>
+                            <charParams l="349" t="321" r="357" b="333">2</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="350" l="113" t="341" r="204" b="350">
+                        <formatting lang="Russian">
+                            <charParams l="113" t="341" r="121" b="350">т</charParams>
+                            <charParams l="122" t="341" r="131" b="350">о</charParams>
+                            <charParams l="132" t="341" r="140" b="350">п</charParams>
+                            <charParams l="143" t="341" r="151" b="350">п</charParams>
+                            <charParams l="153" t="341" r="162" b="350">и</charParams>
+                            <charParams l="165" t="341" r="173" b="350">н</charParams>
+                            <charParams l="175" t="341" r="181" b="350">г</charParams>
+                            <charParams l="183" t="341" r="191" b="350">о</charParams>
+                            <charParams l="193" t="341" r="204" b="350">м</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="323" t="61" r="489" b="133">
+            <region>
+                <rect l="323" t="61" r="489" b="133"/>
+            </region>
+            <text>
+                <par lineSpacing="3910">
+                    <line baseline="101" l="325" t="63" r="486" b="101">
+                        <formatting lang="Russian">
+                            <charParams l="325" t="63" r="367" b="100">М</charParams>
+                            <charParams l="373" t="64" r="394" b="100">Е</charParams>
+                            <charParams l="400" t="64" r="429" b="100">Н</charParams>
+                            <charParams l="438" t="63" r="486" b="101">Ю</charParams>
+                        </formatting>
+                    </line>
+                </par>
+                <par align="Center" lineSpacing="1260">
+                    <line baseline="127" l="329" t="115" r="479" b="130">
+                        <formatting lang="Russian">
+                            <charParams l="329" t="118" r="337" b="127">п</charParams>
+                            <charParams l="339" t="118" r="347" b="127">о</charParams>
+                            <charParams l="349" t="118" r="357" b="127">н</charParams>
+                            <charParams l="359" t="118" r="366" b="127">е</charParams>
+                            <charParams l="367" t="118" r="377" b="130">д</charParams>
+                            <charParams l="377" t="118" r="385" b="127">е</charParams>
+                            <charParams l="386" t="118" r="394" b="127">л</charParams>
+                            <charParams l="396" t="118" r="404" b="127">ь</charParams>
+                            <charParams l="406" t="118" r="414" b="127">н</charParams>
+                            <charParams l="416" t="118" r="424" b="127">и</charParams>
+                            <charParams l="426" t="118" r="433" b="127">к</charParams>
+                            <charParams l="434" t="115" r="439" b="127"></charParams>
+                            <charParams l="440" t="115" r="444" b="127" suspicious="1">1</charParams>
+                            <charParams l="449" t="115" r="453" b="127" suspicious="1">1</charParams>
+                            <charParams l="457" t="125" r="460" b="127">.</charParams>
+                            <charParams l="461" t="115" r="470" b="127">0</charParams>
+                            <charParams l="471" t="115" r="479" b="127">7</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="436" t="875" r="678" b="893">
+            <region>
+                <rect l="436" t="875" r="678" b="893"/>
+            </region>
+            <text>
+                <par lineSpacing="1260">
+                    <line baseline="888" l="437" t="876" r="675" b="890">
+                        <formatting lang="Russian">
+                            <charParams l="437" t="877" r="448" b="888">Ф</charParams>
+                            <charParams l="449" t="880" r="457" b="888">и</charParams>
+                            <charParams l="458" t="879" r="465" b="888">л</charParams>
+                            <charParams l="467" t="879" r="474" b="888">е</charParams>
+                            <charParams l="475" t="879" r="479" b="888"></charParams>
+                            <charParams l="480" t="879" r="487" b="888">п</charParams>
+                            <charParams l="489" t="879" r="495" b="888">т</charParams>
+                            <charParams l="496" t="880" r="504" b="888">и</charParams>
+                            <charParams l="506" t="880" r="514" b="890">ц</charParams>
+                            <charParams l="515" t="880" r="525" b="888">ы</charParams>
+                            <charParams l="526" t="879" r="530" b="888"></charParams>
+                            <charParams l="531" t="879" r="538" b="888">в</charParams>
+                            <charParams l="539" t="876" r="542" b="888"></charParams>
+                            <charParams l="543" t="876" r="550" b="888">б</charParams>
+                            <charParams l="552" t="879" r="559" b="888">е</charParams>
+                            <charParams l="560" t="879" r="567" b="888">л</charParams>
+                            <charParams l="569" t="880" r="575" b="888">к</charParams>
+                            <charParams l="576" t="879" r="583" b="888">а</charParams>
+                            <charParams l="585" t="880" r="591" b="888">х</charParams>
+                            <charParams l="592" t="877" r="595" b="890"></charParams>
+                            <charParams l="596" t="877" r="600" b="890">(</charParams>
+                            <charParams l="602" t="877" r="606" b="888" suspicious="1">1</charParams>
+                            <charParams l="610" t="877" r="617" b="888" suspicious="1">0</charParams>
+                            <charParams l="618" t="877" r="626" b="888">0</charParams>
+                            <charParams l="627" t="877" r="630" b="890">)</charParams>
+                            <charParams l="631" t="877" r="654" b="890" isTab="1" tabLeaderCount="2"></charParams>
+                            <charParams l="655" t="877" r="663" b="888">4</charParams>
+                            <charParams l="664" t="886" r="666" b="890">,</charParams>
+                            <charParams l="668" t="877" r="675" b="888">5</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="127" t="521" r="320" b="612">
+            <region>
+                <rect l="127" t="521" r="320" b="612"/>
+            </region>
+            <text>
+                <par lineSpacing="1008">
+                    <line baseline="534" l="129" t="523" r="262" b="534">
+                        <formatting lang="Russian">
+                            <charParams l="129" t="523" r="137" b="534">С</charParams>
+                            <charParams l="139" t="525" r="146" b="534">а</charParams>
+                            <charParams l="147" t="525" r="155" b="534">л</charParams>
+                            <charParams l="156" t="525" r="163" b="534">а</charParams>
+                            <charParams l="165" t="525" r="171" b="534">т</charParams>
+                            <charParams l="172" t="525" r="175" b="534"></charParams>
+                            <charParams l="176" t="525" r="184" b="534">и</charParams>
+                            <charParams l="186" t="525" r="192" b="534">з</charParams>
+                            <charParams l="193" t="525" r="197" b="534"></charParams>
+                            <charParams l="198" t="525" r="204" b="534">с</charParams>
+                            <charParams l="206" t="525" r="213" b="534">в</charParams>
+                            <charParams l="214" t="525" r="221" b="534">е</charParams>
+                            <charParams l="223" t="526" r="230" b="534">к</charParams>
+                            <charParams l="230" t="525" r="238" b="534">л</charParams>
+                            <charParams l="240" t="526" r="250" b="534">ы</charParams>
+                            <charParams l="251" t="525" r="255" b="534"></charParams>
+                            <charParams l="256" t="525" r="262" b="534">с</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="548" l="129" t="536" r="275" b="552">
+                        <formatting lang="Russian">
+                            <charParams l="129" t="540" r="136" b="548">ч</charParams>
+                            <charParams l="139" t="539" r="146" b="548">е</charParams>
+                            <charParams l="147" t="539" r="155" b="552">р</charParams>
+                            <charParams l="157" t="540" r="165" b="548">н</charParams>
+                            <charParams l="166" t="539" r="174" b="548">о</charParams>
+                            <charParams l="176" t="539" r="182" b="548">с</charParams>
+                            <charParams l="183" t="539" r="191" b="548">л</charParams>
+                            <charParams l="192" t="540" r="200" b="548">и</charParams>
+                            <charParams l="203" t="539" r="210" b="548">в</charParams>
+                            <charParams l="211" t="539" r="219" b="548">о</charParams>
+                            <charParams l="221" t="539" r="230" b="548">м</charParams>
+                            <charParams l="231" t="537" r="238" b="550"></charParams>
+                            <charParams l="239" t="537" r="243" b="550">(</charParams>
+                            <charParams l="245" t="537" r="249" b="548">1</charParams>
+                            <charParams l="253" t="536" r="261" b="548">0</charParams>
+                            <charParams l="262" t="536" r="270" b="548">0</charParams>
+                            <charParams l="271" t="537" r="275" b="550">)</charParams>
+                        </formatting>
+                    </line>
+                </par>
+                <par lineSpacing="1008">
+                    <line baseline="577" l="129" t="565" r="317" b="579">
+                        <formatting lang="Russian">
+                            <charParams l="129" t="566" r="137" b="577">С</charParams>
+                            <charParams l="139" t="568" r="146" b="577">а</charParams>
+                            <charParams l="147" t="568" r="155" b="577">л</charParams>
+                            <charParams l="156" t="568" r="163" b="577">а</charParams>
+                            <charParams l="165" t="568" r="171" b="577">т</charParams>
+                            <charParams l="172" t="568" r="175" b="577"></charParams>
+                            <charParams l="176" t="570" r="182" b="576">«</charParams>
+                            <charParams l="184" t="566" r="193" b="577">С</charParams>
+                            <charParams l="194" t="568" r="200" b="577">т</charParams>
+                            <charParams l="201" t="568" r="209" b="577">о</charParams>
+                            <charParams l="210" t="568" r="218" b="577">л</charParams>
+                            <charParams l="220" t="568" r="228" b="577">и</charParams>
+                            <charParams l="229" t="569" r="237" b="577">ч</charParams>
+                            <charParams l="239" t="569" r="247" b="577">н</charParams>
+                            <charParams l="249" t="569" r="259" b="577">ы</charParams>
+                            <charParams l="261" t="565" r="269" b="577">й</charParams>
+                            <charParams l="271" t="570" r="277" b="576">»</charParams>
+                            <charParams l="278" t="566" r="281" b="579"></charParams>
+                            <charParams l="282" t="566" r="286" b="579">(</charParams>
+                            <charParams l="288" t="566" r="292" b="577" suspicious="1">1</charParams>
+                            <charParams l="296" t="565" r="303" b="577" suspicious="1">0</charParams>
+                            <charParams l="304" t="565" r="313" b="577">0</charParams>
+                            <charParams l="314" t="566" r="317" b="579">)</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="591" l="128" t="579" r="293" b="595">
+                        <formatting lang="Russian">
+                            <charParams l="128" t="580" r="132" b="593">(</charParams>
+                            <charParams l="134" t="583" r="140" b="591">к</charParams>
+                            <charParams l="141" t="583" r="148" b="595">у</charParams>
+                            <charParams l="150" t="582" r="158" b="594">р</charParams>
+                            <charParams l="159" t="589" r="161" b="591">.</charParams>
+                            <charParams l="163" t="579" r="173" b="594">ф</charParams>
+                            <charParams l="175" t="582" r="182" b="591">и</charParams>
+                            <charParams l="184" t="582" r="191" b="591">л</charParams>
+                            <charParams l="193" t="582" r="201" b="591">е</charParams>
+                            <charParams l="199" t="589" r="204" b="595" suspicious="1">^</charParams>
+                            <charParams l="205" t="583" r="209" b="595"></charParams>
+                            <charParams l="210" t="583" r="216" b="591">к</charParams>
+                            <charParams l="218" t="582" r="225" b="591">а</charParams>
+                            <charParams l="227" t="582" r="235" b="594">р</charParams>
+                            <charParams l="236" t="582" r="242" b="591">т</charParams>
+                            <charParams l="243" t="582" r="251" b="591">о</charParams>
+                            <charParams l="253" t="579" r="262" b="595">ф</charParams>
+                            <charParams l="264" t="582" r="271" b="591">е</charParams>
+                            <charParams l="272" t="582" r="280" b="591">л</charParams>
+                            <charParams l="282" t="583" r="289" b="591">ь</charParams>
+                            <charParams l="290" t="589" r="293" b="593">,</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="605" l="129" t="593" r="303" b="609">
+                        <formatting lang="Russian">
+                            <charParams l="129" t="596" r="137" b="605">о</charParams>
+                            <charParams l="138" t="596" r="141" b="605">г</charParams>
+                            <charParams l="141" t="596" r="152" b="609">у</charParams>
+                            <charParams l="153" t="596" r="161" b="609">р</charParams>
+                            <charParams l="163" t="596" r="170" b="605">е</charParams>
+                            <charParams l="172" t="597" r="181" b="608">ц</charParams>
+                            <charParams l="181" t="603" r="183" b="607">,</charParams>
+                            <charParams l="184" t="596" r="188" b="607"></charParams>
+                            <charParams l="189" t="596" r="196" b="605">я</charParams>
+                            <charParams l="198" t="593" r="206" b="605">й</charParams>
+                            <charParams l="207" t="597" r="216" b="608">ц</charParams>
+                            <charParams l="217" t="596" r="225" b="605">о</charParams>
+                            <charParams l="226" t="603" r="229" b="607">,</charParams>
+                            <charParams l="230" t="596" r="233" b="607"></charParams>
+                            <charParams l="234" t="596" r="244" b="605">м</charParams>
+                            <charParams l="246" t="596" r="253" b="605">а</charParams>
+                            <charParams l="255" t="597" r="263" b="605">й</charParams>
+                            <charParams l="264" t="596" r="272" b="605">о</charParams>
+                            <charParams l="274" t="597" r="282" b="605">н</charParams>
+                            <charParams l="284" t="596" r="291" b="605">е</charParams>
+                            <charParams l="292" t="596" r="299" b="605">з</charParams>
+                            <charParams l="300" t="594" r="303" b="607">)</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="133" t="878" r="366" b="991">
+            <region>
+                <rect l="133" t="878" r="366" b="991"/>
+            </region>
+            <text>
+                <par lineSpacing="936">
+                    <line baseline="891" l="135" t="879" r="353" b="891">
+                        <formatting lang="Russian">
+                            <charParams l="135" t="880" r="143" b="891">Р</charParams>
+                            <charParams l="144" t="883" r="154" b="891">ы</charParams>
+                            <charParams l="155" t="879" r="163" b="891">б</charParams>
+                            <charParams l="164" t="882" r="171" b="891">а</charParams>
+                            <charParams l="172" t="882" r="176" b="891"></charParams>
+                            <charParams l="177" t="882" r="183" b="891">з</charParams>
+                            <charParams l="183" t="882" r="191" b="891">а</charParams>
+                            <charParams l="193" t="882" r="200" b="891">п</charParams>
+                            <charParams l="202" t="882" r="209" b="891">е</charParams>
+                            <charParams l="210" t="883" r="218" b="891">ч</charParams>
+                            <charParams l="219" t="880" r="226" b="891">ё</charParams>
+                            <charParams l="228" t="883" r="236" b="891">н</charParams>
+                            <charParams l="237" t="883" r="245" b="891">н</charParams>
+                            <charParams l="247" t="882" r="254" b="891">а</charParams>
+                            <charParams l="255" t="882" r="262" b="891">я</charParams>
+                            <charParams l="263" t="882" r="266" b="891"></charParams>
+                            <charParams l="267" t="882" r="273" b="891">с</charParams>
+                            <charParams l="274" t="882" r="277" b="891"></charParams>
+                            <charParams l="278" t="882" r="284" b="891">т</charParams>
+                            <charParams l="285" t="882" r="293" b="891">о</charParams>
+                            <charParams l="295" t="883" r="304" b="891">м</charParams>
+                            <charParams l="305" t="882" r="312" b="891">а</charParams>
+                            <charParams l="314" t="882" r="320" b="891">т</charParams>
+                            <charParams l="321" t="882" r="329" b="891">о</charParams>
+                            <charParams l="330" t="883" r="339" b="891">м</charParams>
+                            <charParams l="340" t="882" r="344" b="891"></charParams>
+                            <charParams l="345" t="882" r="353" b="891">и</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="904" l="139" t="893" r="224" b="907">
+                        <formatting lang="Russian">
+                            <charParams l="139" t="895" r="145" b="904">с</charParams>
+                            <charParams l="146" t="896" r="156" b="904">ы</charParams>
+                            <charParams l="158" t="895" r="165" b="907">р</charParams>
+                            <charParams l="167" t="895" r="174" b="904">о</charParams>
+                            <charParams l="176" t="896" r="185" b="904">м</charParams>
+                            <charParams l="186" t="893" r="189" b="906"></charParams>
+                            <charParams l="190" t="893" r="194" b="906">(</charParams>
+                            <charParams l="196" t="893" r="200" b="904" suspicious="1">1</charParams>
+                            <charParams l="204" t="893" r="211" b="904" suspicious="1">0</charParams>
+                            <charParams l="212" t="893" r="220" b="904">0</charParams>
+                            <charParams l="221" t="893" r="224" b="906">)</charParams>
+                        </formatting>
+                    </line>
+                </par>
+                <par align="Justified" lineSpacing="1008">
+                    <line baseline="931" l="135" t="920" r="332" b="936">
+                        <formatting lang="Russian">
+                            <charParams l="135" t="920" r="143" b="931">К</charParams>
+                            <charParams l="144" t="922" r="152" b="931">о</charParams>
+                            <charParams l="153" t="922" r="159" b="931">т</charParams>
+                            <charParams l="160" t="922" r="167" b="931">л</charParams>
+                            <charParams l="169" t="922" r="176" b="931">е</charParams>
+                            <charParams l="177" t="922" r="183" b="931">т</charParams>
+                            <charParams l="184" t="922" r="191" b="931">а</charParams>
+                            <charParams l="192" t="922" r="196" b="931"></charParams>
+                            <charParams l="197" t="923" r="203" b="931">к</charParams>
+                            <charParams l="201" t="923" r="211" b="936">у</charParams>
+                            <charParams l="209" t="922" r="220" b="936">р</charParams>
+                            <charParams l="221" t="922" r="229" b="931">и</charParams>
+                            <charParams l="231" t="923" r="238" b="931">н</charParams>
+                            <charParams l="240" t="922" r="247" b="931">а</charParams>
+                            <charParams l="248" t="922" r="255" b="931">я</charParams>
+                            <charParams l="256" t="922" r="260" b="931"></charParams>
+                            <charParams l="261" t="922" r="269" b="931">п</charParams>
+                            <charParams l="270" t="922" r="277" b="931">а</charParams>
+                            <charParams l="279" t="922" r="286" b="934">р</charParams>
+                            <charParams l="287" t="922" r="295" b="931">о</charParams>
+                            <charParams l="297" t="922" r="305" b="931">в</charParams>
+                            <charParams l="305" t="922" r="312" b="931">а</charParams>
+                            <charParams l="313" t="922" r="320" b="931">я</charParams>
+                            <charParams l="321" t="922" r="325" b="931"></charParams>
+                            <charParams l="326" t="922" r="332" b="931">с</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="945" l="135" t="932" r="221" b="948">
+                        <formatting lang="Russian">
+                            <charParams l="135" t="936" r="141" b="945">с</charParams>
+                            <charParams l="142" t="937" r="152" b="945">ы</charParams>
+                            <charParams l="154" t="936" r="161" b="948">р</charParams>
+                            <charParams l="163" t="936" r="170" b="945">о</charParams>
+                            <charParams l="172" t="937" r="181" b="945">м</charParams>
+                            <charParams l="182" t="934" r="185" b="947"></charParams>
+                            <charParams l="186" t="934" r="190" b="947">(</charParams>
+                            <charParams l="192" t="934" r="196" b="945">1</charParams>
+                            <charParams l="200" t="933" r="207" b="945">0</charParams>
+                            <charParams l="208" t="932" r="216" b="945">0</charParams>
+                            <charParams l="217" t="934" r="221" b="947">)</charParams>
+                        </formatting>
+                    </line>
+                </par>
+                <par align="Justified" lineSpacing="1008">
+                    <line baseline="972" l="135" t="960" r="363" b="974">
+                        <formatting lang="Russian">
+                            <charParams l="135" t="965" r="141" b="971">«</charParams>
+                            <charParams l="142" t="960" r="150" b="972">С</charParams>
+                            <charParams l="151" t="963" r="158" b="972">т</charParams>
+                            <charParams l="159" t="963" r="167" b="972">о</charParams>
+                            <charParams l="168" t="964" r="178" b="972">ж</charParams>
+                            <charParams l="179" t="963" r="187" b="972">о</charParams>
+                            <charParams l="188" t="964" r="195" b="972">к</charParams>
+                            <charParams l="196" t="965" r="202" b="971">»</charParams>
+                            <charParams l="203" t="961" r="206" b="974"></charParams>
+                            <charParams l="207" t="961" r="210" b="974">(</charParams>
+                            <charParams l="212" t="964" r="218" b="972">к</charParams>
+                            <charParams l="219" t="963" r="227" b="972">о</charParams>
+                            <charParams l="228" t="963" r="234" b="972">т</charParams>
+                            <charParams l="235" t="963" r="242" b="972">л</charParams>
+                            <charParams l="244" t="963" r="251" b="972">е</charParams>
+                            <charParams l="252" t="963" r="258" b="972">т</charParams>
+                            <charParams l="259" t="963" r="266" b="972">а</charParams>
+                            <charParams l="267" t="963" r="275" b="972"></charParams>
+                            <charParams l="276" t="963" r="284" b="972">п</charParams>
+                            <charParams l="285" t="963" r="293" b="972">о</charParams>
+                            <charParams l="293" t="963" r="302" b="974">д</charParams>
+                            <charParams l="303" t="963" r="306" b="974"></charParams>
+                            <charParams l="307" t="964" r="319" b="972">ш</charParams>
+                            <charParams l="320" t="963" r="327" b="972">а</charParams>
+                            <charParams l="329" t="963" r="336" b="972">п</charParams>
+                            <charParams l="338" t="964" r="344" b="972">к</charParams>
+                            <charParams l="345" t="963" r="353" b="972">о</charParams>
+                            <charParams l="355" t="961" r="363" b="972">й</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="986" l="135" t="975" r="236" b="989">
+                        <formatting lang="Russian">
+                            <charParams l="135" t="977" r="143" b="986">и</charParams>
+                            <charParams l="145" t="977" r="150" b="986">з</charParams>
+                            <charParams l="151" t="977" r="155" b="986"></charParams>
+                            <charParams l="156" t="978" r="162" b="986">к</charParams>
+                            <charParams l="163" t="977" r="170" b="986">а</charParams>
+                            <charParams l="172" t="977" r="180" b="989">р</charParams>
+                            <charParams l="181" t="977" r="187" b="986">т</charParams>
+                            <charParams l="188" t="977" r="195" b="986">о</charParams>
+                            <charParams l="197" t="975" r="206" b="989">ф</charParams>
+                            <charParams l="208" t="977" r="215" b="986">е</charParams>
+                            <charParams l="216" t="977" r="223" b="986">л</charParams>
+                            <charParams l="225" t="977" r="231" b="986">я</charParams>
+                            <charParams l="233" t="975" r="236" b="988">)</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="415" t="694" r="633" b="808">
+            <region>
+                <rect l="415" t="694" r="633" b="808"/>
+            </region>
+            <text>
+                <par lineSpacing="1008">
+                    <line baseline="707" l="417" t="696" r="621" b="712">
+                        <formatting lang="Russian">
+                            <charParams l="417" t="696" r="425" b="707">К</charParams>
+                            <charParams l="426" t="698" r="433" b="707">а</charParams>
+                            <charParams l="434" t="698" r="442" b="710">р</charParams>
+                            <charParams l="443" t="698" r="449" b="707">т</charParams>
+                            <charParams l="450" t="698" r="458" b="707">о</charParams>
+                            <charParams l="459" t="696" r="470" b="712">ф</charParams>
+                            <charParams l="470" t="698" r="477" b="707">е</charParams>
+                            <charParams l="478" t="698" r="486" b="707">л</charParams>
+                            <charParams l="488" t="699" r="495" b="707">ь</charParams>
+                            <charParams l="496" t="698" r="499" b="707"></charParams>
+                            <charParams l="500" t="698" r="506" b="707">з</charParams>
+                            <charParams l="507" t="698" r="514" b="707">а</charParams>
+                            <charParams l="516" t="698" r="523" b="707">п</charParams>
+                            <charParams l="525" t="698" r="532" b="707">е</charParams>
+                            <charParams l="534" t="699" r="541" b="707">ч</charParams>
+                            <charParams l="543" t="698" r="550" b="707">е</charParams>
+                            <charParams l="551" t="699" r="559" b="707">н</charParams>
+                            <charParams l="561" t="699" r="568" b="707">н</charParams>
+                            <charParams l="570" t="699" r="580" b="707">ы</charParams>
+                            <charParams l="582" t="696" r="590" b="707">й</charParams>
+                            <charParams l="591" t="696" r="594" b="707"></charParams>
+                            <charParams l="595" t="698" r="603" b="707">п</charParams>
+                            <charParams l="604" t="698" r="612" b="707">о</charParams>
+                            <charParams l="613" t="699" r="621" b="709">д</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="721" l="417" t="709" r="585" b="724">
+                        <formatting lang="Russian">
+                            <charParams l="417" t="712" r="423" b="721">с</charParams>
+                            <charParams l="424" t="713" r="434" b="721">ы</charParams>
+                            <charParams l="436" t="712" r="443" b="724">р</charParams>
+                            <charParams l="445" t="713" r="452" b="721">н</charParams>
+                            <charParams l="454" t="712" r="462" b="721">о</charParams>
+                            <charParams l="463" t="713" r="471" b="721">й</charParams>
+                            <charParams l="472" t="713" r="476" b="721"></charParams>
+                            <charParams l="477" t="713" r="483" b="721">к</charParams>
+                            <charParams l="484" t="712" r="492" b="721">о</charParams>
+                            <charParams l="494" t="712" r="501" b="724">р</charParams>
+                            <charParams l="503" t="712" r="511" b="721">о</charParams>
+                            <charParams l="512" t="713" r="519" b="721">ч</charParams>
+                            <charParams l="521" t="713" r="528" b="721">к</charParams>
+                            <charParams l="529" t="712" r="537" b="721">о</charParams>
+                            <charParams l="538" t="709" r="546" b="721">й</charParams>
+                            <charParams l="547" t="709" r="550" b="723"></charParams>
+                            <charParams l="551" t="710" r="555" b="723">(</charParams>
+                            <charParams l="557" t="710" r="561" b="721" suspicious="1">1</charParams>
+                            <charParams l="565" t="710" r="572" b="721" suspicious="1">5</charParams>
+                            <charParams l="573" t="710" r="581" b="721">0</charParams>
+                            <charParams l="581" t="710" r="585" b="723">)</charParams>
+                        </formatting>
+                    </line>
+                </par>
+                <par lineSpacing="1008">
+                    <line baseline="748" l="417" t="737" r="621" b="752">
+                        <formatting lang="Russian">
+                            <charParams l="417" t="737" r="425" b="748">С</charParams>
+                            <charParams l="426" t="739" r="434" b="748">в</charParams>
+                            <charParams l="435" t="739" r="442" b="748">е</charParams>
+                            <charParams l="443" t="740" r="450" b="748">к</charParams>
+                            <charParams l="450" t="739" r="458" b="748">л</charParams>
+                            <charParams l="459" t="739" r="466" b="748">а</charParams>
+                            <charParams l="467" t="739" r="471" b="748"></charParams>
+                            <charParams l="472" t="739" r="478" b="748">т</charParams>
+                            <charParams l="478" t="740" r="486" b="752">у</charParams>
+                            <charParams l="487" t="740" r="498" b="748">ш</charParams>
+                            <charParams l="500" t="739" r="507" b="748">е</charParams>
+                            <charParams l="508" t="740" r="516" b="748">н</charParams>
+                            <charParams l="518" t="739" r="525" b="748">а</charParams>
+                            <charParams l="526" t="739" r="533" b="748">я</charParams>
+                            <charParams l="534" t="739" r="538" b="748"></charParams>
+                            <charParams l="539" t="739" r="546" b="748">в</charParams>
+                            <charParams l="547" t="739" r="550" b="748"></charParams>
+                            <charParams l="551" t="739" r="556" b="748">с</charParams>
+                            <charParams l="558" t="740" r="567" b="748">м</charParams>
+                            <charParams l="569" t="739" r="576" b="748">е</charParams>
+                            <charParams l="577" t="739" r="583" b="748">т</charParams>
+                            <charParams l="584" t="739" r="591" b="748">а</charParams>
+                            <charParams l="593" t="740" r="601" b="748">н</charParams>
+                            <charParams l="602" t="739" r="610" b="748">е</charParams>
+                            <charParams l="611" t="739" r="614" b="748"></charParams>
+                            <charParams l="615" t="739" r="621" b="748">с</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="762" l="417" t="751" r="575" b="765">
+                        <formatting lang="Russian">
+                            <charParams l="417" t="753" r="422" b="762">г</charParams>
+                            <charParams l="423" t="753" r="431" b="765">р</charParams>
+                            <charParams l="433" t="753" r="440" b="762">е</charParams>
+                            <charParams l="441" t="754" r="450" b="764">ц</charParams>
+                            <charParams l="450" t="754" r="457" b="762">к</charParams>
+                            <charParams l="458" t="754" r="466" b="762">и</charParams>
+                            <charParams l="468" t="754" r="477" b="762">м</charParams>
+                            <charParams l="478" t="753" r="481" b="762"></charParams>
+                            <charParams l="482" t="753" r="490" b="762">о</charParams>
+                            <charParams l="492" t="753" r="499" b="765">р</charParams>
+                            <charParams l="501" t="753" r="508" b="762">е</charParams>
+                            <charParams l="509" t="754" r="516" b="762">х</charParams>
+                            <charParams l="517" t="753" r="525" b="762">о</charParams>
+                            <charParams l="526" t="754" r="536" b="762">м</charParams>
+                            <charParams l="537" t="751" r="540" b="764"></charParams>
+                            <charParams l="541" t="751" r="545" b="764">)</charParams>
+                            <charParams l="546" t="751" r="550" b="762" suspicious="1">1</charParams>
+                            <charParams l="554" t="751" r="561" b="762" suspicious="1">5</charParams>
+                            <charParams l="562" t="751" r="570" b="762">0</charParams>
+                            <charParams l="571" t="751" r="575" b="764">)</charParams>
+                        </formatting>
+                    </line>
+                </par>
+                <par lineSpacing="1080">
+                    <line baseline="789" l="417" t="778" r="630" b="793">
+                        <formatting lang="Russian">
+                            <charParams l="417" t="778" r="425" b="789">С</charParams>
+                            <charParams l="426" t="780" r="434" b="789">п</charParams>
+                            <charParams l="435" t="780" r="442" b="789">а</charParams>
+                            <charParams l="444" t="780" r="449" b="789">г</charParams>
+                            <charParams l="450" t="780" r="457" b="789">е</charParams>
+                            <charParams l="459" t="780" r="465" b="789">т</charParams>
+                            <charParams l="465" t="780" r="472" b="789">т</charParams>
+                            <charParams l="473" t="781" r="481" b="789">и</charParams>
+                            <charParams l="482" t="780" r="485" b="789"></charParams>
+                            <charParams l="486" t="780" r="492" b="789">с</charParams>
+                            <charParams l="493" t="780" r="496" b="789"></charParams>
+                            <charParams l="497" t="780" r="503" b="789">с</charParams>
+                            <charParams l="504" t="780" r="512" b="789">о</charParams>
+                            <charParams l="513" t="781" r="520" b="793">у</charParams>
+                            <charParams l="521" t="780" r="527" b="789">с</charParams>
+                            <charParams l="528" t="780" r="536" b="789">о</charParams>
+                            <charParams l="538" t="781" r="547" b="789">м</charParams>
+                            <charParams l="548" t="778" r="552" b="789"></charParams>
+                            <charParams l="553" t="778" r="560" b="789">Б</charParams>
+                            <charParams l="561" t="780" r="569" b="789">о</charParams>
+                            <charParams l="570" t="780" r="577" b="789">л</charParams>
+                            <charParams l="579" t="780" r="587" b="789">о</charParams>
+                            <charParams l="588" t="781" r="596" b="789">н</charParams>
+                            <charParams l="598" t="781" r="605" b="789">ь</charParams>
+                            <charParams l="607" t="780" r="614" b="789">е</charParams>
+                            <charParams l="615" t="780" r="621" b="789">з</charParams>
+                            <charParams l="622" t="780" r="630" b="789">е</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="804" l="417" t="791" r="450" b="805">
+                        <formatting lang="Russian">
+                            <charParams l="417" t="791" r="420" b="804">(</charParams>
+                            <charParams l="423" t="791" r="426" b="802">1</charParams>
+                            <charParams l="430" t="791" r="437" b="802" suspicious="1">5</charParams>
+                            <charParams l="438" t="791" r="446" b="802">0</charParams>
+                            <charParams l="447" t="791" r="450" b="805" suspicious="1">)</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Text" blockName="" l="431" t="520" r="681" b="566">
+            <region>
+                <rect l="431" t="520" r="681" b="566"/>
+            </region>
+            <text>
+                <par lineSpacing="936">
+                    <line baseline="533" l="433" t="521" r="676" b="536">
+                        <formatting lang="Russian">
+                            <charParams l="433" t="522" r="441" b="533">С</charParams>
+                            <charParams l="442" t="524" r="449" b="533">а</charParams>
+                            <charParams l="450" t="524" r="458" b="533">л</charParams>
+                            <charParams l="459" t="524" r="466" b="533">а</charParams>
+                            <charParams l="468" t="524" r="474" b="533">т</charParams>
+                            <charParams l="475" t="524" r="478" b="533"></charParams>
+                            <charParams l="479" t="526" r="485" b="532">«</charParams>
+                            <charParams l="487" t="522" r="494" b="533">В</charParams>
+                            <charParams l="496" t="524" r="503" b="533">е</charParams>
+                            <charParams l="505" t="525" r="512" b="533">н</charParams>
+                            <charParams l="514" t="524" r="519" b="533">г</charParams>
+                            <charParams l="520" t="524" r="528" b="533">е</charParams>
+                            <charParams l="529" t="524" r="537" b="536">р</charParams>
+                            <charParams l="538" t="524" r="544" b="533">с</charParams>
+                            <charParams l="545" t="525" r="551" b="533">к</charParams>
+                            <charParams l="553" t="525" r="561" b="533">и</charParams>
+                            <charParams l="563" t="521" r="570" b="533">й</charParams>
+                            <charParams l="572" t="526" r="578" b="532">»</charParams>
+                            <charParams l="579" t="522" r="582" b="535"></charParams>
+                            <charParams l="583" t="522" r="587" b="535">(</charParams>
+                            <charParams l="589" t="522" r="593" b="533" suspicious="1">1</charParams>
+                            <charParams l="596" t="522" r="604" b="533" suspicious="1">0</charParams>
+                            <charParams l="605" t="522" r="613" b="533">0</charParams>
+                            <charParams l="614" t="522" r="617" b="535">)</charParams>
+                            <charParams l="618" t="522" r="670" b="535" isTab="1" tabLeaderCount="6"></charParams>
+                            <charParams l="671" t="530" r="676" b="533" suspicious="1">.</charParams>
+                        </formatting>
+                    </line>
+                </par>
+                <par lineSpacing="936">
+                    <line baseline="547" l="433" t="536" r="632" b="551">
+                        <formatting lang="Russian">
+                            <charParams l="433" t="536" r="436" b="549">(</charParams>
+                            <charParams l="438" t="538" r="445" b="547">п</charParams>
+                            <charParams l="447" t="538" r="455" b="547">о</charParams>
+                            <charParams l="456" t="539" r="465" b="547">м</charParams>
+                            <charParams l="467" t="539" r="475" b="547">и</charParams>
+                            <charParams l="476" t="538" r="484" b="549">д</charParams>
+                            <charParams l="485" t="538" r="493" b="547">о</charParams>
+                            <charParams l="494" t="538" r="502" b="550">р</charParams>
+                            <charParams l="503" t="545" r="505" b="548">,</charParams>
+                            <charParams l="506" t="538" r="510" b="548"></charParams>
+                            <charParams l="511" t="538" r="519" b="547">о</charParams>
+                            <charParams l="520" t="538" r="525" b="547">г</charParams>
+                            <charParams l="525" t="539" r="533" b="550">у</charParams>
+                            <charParams l="534" t="538" r="542" b="550">р</charParams>
+                            <charParams l="543" t="539" r="550" b="547">е</charParams>
+                            <charParams l="552" t="539" r="561" b="550">ц</charParams>
+                            <charParams l="561" t="545" r="563" b="549">,</charParams>
+                            <charParams l="564" t="538" r="568" b="549"></charParams>
+                            <charParams l="569" t="538" r="574" b="547">с</charParams>
+                            <charParams l="576" t="539" r="586" b="547">ы</charParams>
+                            <charParams l="588" t="538" r="595" b="550">р</charParams>
+                            <charParams l="597" t="545" r="599" b="549">,</charParams>
+                            <charParams l="600" t="536" r="602" b="549"></charParams>
+                            <charParams l="603" t="536" r="613" b="547">Л</charParams>
+                            <charParams l="614" t="539" r="622" b="551">у</charParams>
+                            <charParams l="623" t="539" r="629" b="547">к</charParams>
+                            <charParams l="630" t="545" r="632" b="549">,</charParams>
+                        </formatting>
+                    </line>
+                    <line baseline="560" l="433" t="549" r="575" b="563">
+                        <formatting lang="Russian">
+                            <charParams l="433" t="552" r="441" b="560">ч</charParams>
+                            <charParams l="442" t="551" r="449" b="560">е</charParams>
+                            <charParams l="450" t="551" r="456" b="560">с</charParams>
+                            <charParams l="458" t="552" r="466" b="560">н</charParams>
+                            <charParams l="467" t="551" r="475" b="560">о</charParams>
+                            <charParams l="477" t="552" r="483" b="560">к</charParams>
+                            <charParams l="484" t="558" r="486" b="562">,</charParams>
+                            <charParams l="487" t="552" r="491" b="562"></charParams>
+                            <charParams l="492" t="552" r="501" b="560">м</charParams>
+                            <charParams l="503" t="551" r="510" b="560">а</charParams>
+                            <charParams l="511" t="551" r="517" b="560">с</charParams>
+                            <charParams l="518" t="551" r="525" b="560">л</charParams>
+                            <charParams l="527" t="551" r="534" b="560">о</charParams>
+                            <charParams l="535" t="551" r="539" b="563"></charParams>
+                            <charParams l="540" t="551" r="548" b="563">р</charParams>
+                            <charParams l="549" t="551" r="556" b="560">а</charParams>
+                            <charParams l="557" t="551" r="563" b="560">с</charParams>
+                            <charParams l="564" t="551" r="571" b="560">т</charParams>
+                            <charParams l="572" t="549" r="575" b="562">)</charParams>
+                        </formatting>
+                    </line>
+                </par>
+            </text>
+        </block>
+        <block blockType="Picture" blockName="" l="615" t="30" r="730" b="140">
+            <region>
+                <rect l="615" t="30" r="730" b="140"/>
+            </region>
+        </block>
+        <block blockType="Picture" blockName="" l="0" t="148" r="104" b="636">
+            <region>
+                <rect l="0" t="148" r="9" b="149"/>
+                <rect l="0" t="149" r="54" b="150"/>
+                <rect l="0" t="150" r="104" b="635"/>
+                <rect l="0" t="635" r="24" b="636"/>
+            </region>
+        </block>
+        <block blockType="SeparatorsBox" blockName="" l="307" t="803" r="509" b="852">
+            <region>
+                <rect l="307" t="803" r="509" b="807"/>
+                <rect l="307" t="807" r="509" b="849"/>
+                <rect l="307" t="849" r="509" b="852"/>
+            </region>
+            <separatorsBox>
+                <separator type="Black" thickness="3">
+                    <start x="307" y="805"/>
+                    <end x="509" y="805"/>
+                </separator>
+                <separator type="Black" thickness="3">
+                    <start x="307" y="850"/>
+                    <end x="509" y="850"/>
+                </separator>
+                <separator type="Black" thickness="3">
+                    <start x="308" y="804"/>
+                    <end x="308" y="852"/>
+                </separator>
+                <separator type="Black" thickness="4">
+                    <start x="507" y="804"/>
+                    <end x="507" y="852"/>
+                </separator>
+            </separatorsBox>
+        </block>
+        <block blockType="SeparatorsBox" blockName="" l="318" t="440" r="473" b="495">
+            <region>
+                <rect l="318" t="440" r="473" b="443"/>
+                <rect l="318" t="443" r="473" b="491"/>
+                <rect l="318" t="491" r="473" b="495"/>
+            </region>
+            <separatorsBox>
+                <separator type="Black" thickness="3">
+                    <start x="318" y="441"/>
+                    <end x="473" y="441"/>
+                </separator>
+                <separator type="Black" thickness="4">
+                    <start x="318" y="493"/>
+                    <end x="473" y="493"/>
+                </separator>
+                <separator type="Black" thickness="4">
+                    <start x="320" y="440"/>
+                    <end x="320" y="495"/>
+                </separator>
+                <separator type="Black" thickness="4">
+                    <start x="471" y="440"/>
+                    <end x="471" y="495"/>
+                </separator>
+            </separatorsBox>
+        </block>
+        <block blockType="Separator" blockName="" l="99" t="463" r="280" b="467">
+            <region>
+                <rect l="99" t="463" r="280" b="467"/>
+            </region>
+            <separator type="Black" thickness="4">
+                <start x="99" y="465"/>
+                <end x="280" y="465"/>
+            </separator>
+        </block>
+        <block blockType="Separator" blockName="" l="511" t="463" r="703" b="467">
+            <region>
+                <rect l="511" t="463" r="703" b="467"/>
+            </region>
+            <separator type="Black" thickness="4">
+                <start x="511" y="465"/>
+                <end x="703" y="465"/>
+            </separator>
+        </block>
+        <block blockType="Separator" blockName="" l="104" t="825" r="289" b="831">
+            <region>
+                <rect l="104" t="825" r="289" b="831"/>
+            </region>
+            <separator type="Black" thickness="6">
+                <start x="104" y="828"/>
+                <end x="289" y="828"/>
+            </separator>
+        </block>
+        <block blockType="Separator" blockName="" l="520" t="825" r="718" b="831">
+            <region>
+                <rect l="520" t="825" r="718" b="831"/>
+            </region>
+            <separator type="Black" thickness="6">
+                <start x="520" y="828"/>
+                <end x="718" y="828"/>
+            </separator>
+        </block>
+        <block blockType="Separator" blockName="" l="104" t="825" r="109" b="992">
+            <region>
+                <rect l="104" t="825" r="109" b="992"/>
+            </region>
+            <separator type="Black" thickness="5">
+                <start x="106" y="825"/>
+                <end x="106" y="992"/>
+            </separator>
+        </block>
+        <block blockType="Separator" blockName="" l="400" t="513" r="403" b="601">
+            <region>
+                <rect l="400" t="513" r="403" b="601"/>
+            </region>
+            <separator type="Black" thickness="3">
+                <start x="401" y="513"/>
+                <end x="401" y="601"/>
+            </separator>
+        </block>
+        <block blockType="Separator" blockName="" l="410" t="876" r="412" b="965">
+            <region>
+                <rect l="410" t="876" r="412" b="965"/>
+            </region>
+            <separator type="Black" thickness="2">
+                <start x="411" y="876"/>
+                <end x="411" y="965"/>
+            </separator>
+        </block>
+        <block blockType="Separator" blockName="" l="713" t="825" r="718" b="992">
+            <region>
+                <rect l="713" t="825" r="718" b="992"/>
+            </region>
+            <separator type="Black" thickness="5">
+                <start x="715" y="825"/>
+                <end x="715" y="992"/>
+            </separator>
+        </block>
+        <block blockType="Separator" blockName="" l="391" t="223" r="394" b="357">
+            <region>
+                <rect l="391" t="223" r="394" b="357"/>
+            </region>
+            <separator type="Dotted" thickness="3">
+                <start x="392" y="223"/>
+                <end x="392" y="357"/>
+            </separator>
+        </block>
+        <block blockType="Picture" blockName="" l="307" t="803" r="509" b="852">
+            <region>
+                <rect l="307" t="803" r="509" b="852"/>
+            </region>
+        </block>
+        <block blockType="Picture" blockName="" l="318" t="440" r="473" b="495">
+            <region>
+                <rect l="318" t="440" r="473" b="495"/>
+            </region>
+        </block>
+        <block blockType="Picture" blockName="" l="86" t="150" r="751" b="389">
+            <region>
+                <rect l="86" t="150" r="113" b="151"/>
+                <rect l="86" t="151" r="751" b="389"/>
+            </region>
+        </block>
+    </page>
+</document>
