@@ -1,4 +1,4 @@
-package main
+package ocr
 
 import (
 	"fmt"
@@ -6,10 +6,9 @@ import (
 	"net/url"
 	"strconv"
 	"strings"
-	"yummy-bot/ocr"
 )
 
-func loadRectsFromUri(uri string) ([]ocr.FloatRect, error) {
+func LoadRectsFromUri(uri string) ([]FloatRect, error) {
 	u, err := url.Parse(uri)
 	if err != nil {
 		return nil, err
@@ -35,15 +34,15 @@ func loadRectsFromUri(uri string) ([]ocr.FloatRect, error) {
 		numbers = append(numbers, nFloat/1000)
 	}
 
-	rects := make([]ocr.FloatRect, 0, len(numbers)/4)
+	rects := make([]FloatRect, 0, len(numbers)/4)
 
 	for i := 0; i < len(numbers); i += 4 {
-		rects = append(rects, ocr.FloatRect{
-			Min: ocr.FloatPoint{
+		rects = append(rects, FloatRect{
+			Min: FloatPoint{
 				X: numbers[i],
 				Y: numbers[i+1],
 			},
-			Max: ocr.FloatPoint{
+			Max: FloatPoint{
 				X: numbers[i] + numbers[i+2],
 				Y: numbers[i+1] + numbers[i+3],
 			},
@@ -52,7 +51,7 @@ func loadRectsFromUri(uri string) ([]ocr.FloatRect, error) {
 	return rects, nil
 }
 
-func rectsToUri(rects []ocr.FloatRect) string {
+func RectsToUri(rects []FloatRect) string {
 	points := make([]string, 0, len(rects)*4)
 	for _, r := range rects {
 		points = append(points, fmt.Sprint(math.Round(r.Min.X*1000)))

@@ -27,13 +27,12 @@ type BlockOfText struct {
 func postProcessTextAbbyy(text string) []string {
 	text = strings.ToLower(text)
 	text = strings.ReplaceAll(text, ")", ")\n")
-	text = strings.ReplaceAll(text, "^", "")
 	lines := strings.Split(text, "\n")
 	re := regexp.MustCompile(`^(.*?)(\(.+)?$`)
 	resultLines := make([]string, 0, 1)
 	for _, line := range lines {
-		line = strings.TrimSpace(line)
 		line = re.ReplaceAllString(line, `$1`)
+		line = strings.Join(strings.Fields(line), " ")
 		if line == "" {
 			continue
 		}
@@ -42,9 +41,14 @@ func postProcessTextAbbyy(text string) []string {
 	return resultLines
 }
 
-func extractLines(document abbyyDocument, rects []image.Rectangle) []string {
+func extractLines(document abbyyDocument, relativeRects []FloatRect) []string {
+	rects := make([]image.Rectangle, len(relativeRects))
+	for i := 0; i < len(relativeRects); i++ {
+		rects[i] = relativeToAbsolute(relativeRects[i], document.Page.Width, document.Page.Height)
+	}
 	page := document.Page
 	blocks := make([]BlockOfText, 0, len(rects))
+
 	for _, block := range page.Block {
 		if block.BlockType != "Text" {
 			continue
@@ -57,8 +61,18 @@ func extractLines(document abbyyDocument, rects []image.Rectangle) []string {
 		if rectIndex == -1 {
 			continue
 		}
+		previousParLineB := -100
 		var sb strings.Builder
 		for _, par := range block.Text.Par {
+			if len(par.Line) == 0 {
+				continue
+			}
+			firstLine := par.Line[0]
+			if firstLine.T-previousParLineB > 10 {
+				sb.WriteString("\n")
+			} else {
+				sb.WriteString("")
+			}
 			for _, line := range par.Line {
 				for _, cp := range line.Formatting.CharParams {
 					charPoint := image.Point{
@@ -75,8 +89,8 @@ func extractLines(document abbyyDocument, rects []image.Rectangle) []string {
 					}
 				}
 				sb.WriteString(" ")
+				previousParLineB = line.B
 			}
-			sb.WriteString("\n")
 		}
 		blocks = append(blocks, BlockOfText{
 			rectIndex: rectIndex,
@@ -108,11 +122,5 @@ func GetTextFromImageAbbyy(imageReader io.Reader, relativeRects []FloatRect, use
 		fmt.Println("recognizeFile failed", err)
 		return nil, err
 	}
-
-	absoluteRects := make([]image.Rectangle, len(relativeRects))
-	for i := 0; i < len(relativeRects); i++ {
-		absoluteRects[i] = relativeToAbsolute(relativeRects[i], doc.Page.Width, doc.Page.Height)
-	}
-
-	return extractLines(doc, absoluteRects), nil
+	return extractLines(doc, relativeRects), nil
 }

@@ -1,9 +1,8 @@
-package main
+package ocr
 
 import (
 	"reflect"
 	"testing"
-	"yummy-bot/ocr"
 )
 
 func Test_loadRectsFromUri(t *testing.T) {
@@ -13,29 +12,29 @@ func Test_loadRectsFromUri(t *testing.T) {
 	tests := []struct {
 		name    string
 		args    args
-		want    []ocr.FloatRect
+		want    []FloatRect
 		wantErr bool
 	}{
 		{
 			name: "correct url with 2 points",
 			args: args{uri: "http://localhost:3000/?r=129.421.319.100.509.417.310.105"},
-			want: []ocr.FloatRect{
+			want: []FloatRect{
 				{
-					Min: ocr.FloatPoint{
+					Min: FloatPoint{
 						X: 0.129,
 						Y: 0.421,
 					},
-					Max: ocr.FloatPoint{
+					Max: FloatPoint{
 						X: 0.448,
 						Y: 0.521,
 					},
 				},
 				{
-					Min: ocr.FloatPoint{
+					Min: FloatPoint{
 						X: 0.509,
 						Y: 0.417,
 					},
-					Max: ocr.FloatPoint{
+					Max: FloatPoint{
 						X: 0.819,
 						Y: 0.522,
 					},
@@ -76,13 +75,13 @@ func Test_loadRectsFromUri(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := loadRectsFromUri(tt.args.uri)
+			got, err := LoadRectsFromUri(tt.args.uri)
 			if (err != nil) != tt.wantErr {
-				t.Errorf("loadRectsFromUri() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("LoadRectsFromUri() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
 			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("loadRectsFromUri() got = %v, want %v", got, tt.want)
+				t.Errorf("LoadRectsFromUri() got = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -91,7 +90,7 @@ func Test_loadRectsFromUri(t *testing.T) {
 
 func Test_rectsToUri(t *testing.T) {
 	type args struct {
-		rects []ocr.FloatRect
+		rects []FloatRect
 	}
 	tests := []struct {
 		name string
@@ -101,23 +100,23 @@ func Test_rectsToUri(t *testing.T) {
 		{
 			name: "export 2 points",
 			args: args{
-				rects: []ocr.FloatRect{
+				rects: []FloatRect{
 					{
-						Min: ocr.FloatPoint{
+						Min: FloatPoint{
 							X: 0.129,
 							Y: 0.421,
 						},
-						Max: ocr.FloatPoint{
+						Max: FloatPoint{
 							X: 0.448,
 							Y: 0.521,
 						},
 					},
 					{
-						Min: ocr.FloatPoint{
+						Min: FloatPoint{
 							X: 0.509,
 							Y: 0.417,
 						},
-						Max: ocr.FloatPoint{
+						Max: FloatPoint{
 							X: 0.819,
 							Y: 0.522,
 						},
@@ -129,7 +128,7 @@ func Test_rectsToUri(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := rectsToUri(tt.args.rects); got != tt.want {
+			if got := RectsToUri(tt.args.rects); got != tt.want {
 				t.Errorf("rectsToUri() = %v, want %v", got, tt.want)
 			}
 		})

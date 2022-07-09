@@ -44,11 +44,11 @@ func onRects(c tele.Context) error {
 			log.Println("GetRects failed", err)
 			currentRects = make([]ocr.FloatRect, 0)
 		}
-		return c.Send(rectsToUri(currentRects), &tele.SendOptions{
+		return c.Send(ocr.RectsToUri(currentRects), &tele.SendOptions{
 			ParseMode: tele.ModeMarkdown,
 		})
 	}
-	rects, err := loadRectsFromUri(payload)
+	rects, err := ocr.LoadRectsFromUri(payload)
 	if err != nil {
 		return c.Send("uri rects parsing failed", err)
 	}
