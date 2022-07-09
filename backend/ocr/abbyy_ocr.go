@@ -68,7 +68,8 @@ func extractLines(document abbyyDocument, relativeRects []FloatRect) []string {
 				continue
 			}
 			firstLine := par.Line[0]
-			if firstLine.T-previousParLineB > 10 {
+			// value from -1 to 11
+			if firstLine.T-previousParLineB > 5 {
 				sb.WriteString("\n")
 			} else {
 				sb.WriteString("")
