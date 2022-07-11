@@ -5,7 +5,6 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"log"
 	"regexp"
@@ -162,15 +161,15 @@ func PostOrderInChat(order OrderRequest) error {
 	secretKeyHmac.Write([]byte(order.DataCheckString))
 	hash := secretKeyHmac.Sum(nil)
 	if hex.EncodeToString(hash) != order.Hash {
-		log.Println("auth fail")
-	} else {
-		log.Println("auth success")
+		log.Printf("authentication failed")
+		return fmt.Errorf("ошибка аутентификации")
 	}
 	userId, _ := strconv.ParseInt(order.UserId, 10, 64)
 
 	minskHour := GetMinskHour()
 	if minskHour >= cfg.OrderHourEnd {
-		return errors.New("заказы принимаются до " + strconv.Itoa(cfg.OrderHourEnd) + ":00")
+		log.Println("order after end hour")
+		return fmt.Errorf("заказы принимаются до %d:00", cfg.OrderHourEnd)
 	}
 
 	var sb strings.Builder
