@@ -59,5 +59,5 @@ func RectsToUri(rects []FloatRect) string {
 		points = append(points, fmt.Sprint(math.Round((r.Max.X-r.Min.X)*1000)))
 		points = append(points, fmt.Sprint(math.Round((r.Max.Y-r.Min.Y)*1000)))
 	}
-	return "https://pischule.github.io/yummy-bot-2/rects-tool/?r=" + strings.Join(points, ".")
+	return "https://pischule.github.io/yummy-bot-2/?r=" + strings.Join(points, ".")
 }
