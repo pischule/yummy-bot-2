@@ -123,7 +123,7 @@ func Test_rectsToUri(t *testing.T) {
 					},
 				},
 			},
-			want: "https://pischule.github.io/yummy-bot-2/rects-tool/?r=129.421.319.100.509.417.310.105",
+			want: "https://pischule.github.io/yummy-bot-2/?r=129.421.319.100.509.417.310.105",
 		},
 	}
 	for _, tt := range tests {

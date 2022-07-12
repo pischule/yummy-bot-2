@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"log"
 	"os"
 	"time"
@@ -59,6 +60,11 @@ func SaveMenu(menu Menu) error {
 
 func GetMenu() (Menu, error) {
 	var menu Menu
-	err := readObject(&menu, menuFilePath)
-	return menu, err
+	if err := readObject(&menu, menuFilePath); err != nil {
+		return menu, err
+	}
+	if !Today().Equal(menu.PublishDate) {
+		return Menu{}, errors.New("too old menu")
+	}
+	return menu, nil
 }
