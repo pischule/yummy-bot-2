@@ -21,9 +21,6 @@ type OrderItem struct {
 }
 
 func RunWeb(dev bool) {
-
-	gin.SetMode(gin.ReleaseMode)
-
 	r := gin.Default()
 	if dev {
 		r.Use(cors.Default())
@@ -66,7 +63,6 @@ func RunWeb(dev bool) {
 	})
 
 	if err := r.Run(); err != nil {
-		log.Println("webserver failed to start", err)
-		panic(err)
+		log.Fatal("webserver failed to start", err)
 	}
 }
