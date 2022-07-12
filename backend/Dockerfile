@@ -10,7 +10,7 @@ RUN go mod download
 COPY . .
 
 ENV CGO_ENABLED=0
-RUN go test && go build
+RUN go build
 
 FROM alpine:3.16
 
