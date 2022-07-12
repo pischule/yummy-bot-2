@@ -34,7 +34,7 @@ func RunWeb(dev bool) {
 		r.Use(cors.New(config))
 	}
 	r.GET("/menu", func(c *gin.Context) {
-		menu, err := GetMenu(Today())
+		menu, err := GetMenu()
 		if err != nil || menu.Items == "" {
 			log.Println("get menu failed", err)
 			c.JSON(404, gin.H{"error": "today's menu not found"})
@@ -47,8 +47,7 @@ func RunWeb(dev bool) {
 			return
 		}
 
-		weekday := menu.DeliveryDate.Weekday()
-		ruWeekday := LocalizeWeekday(weekday)
+		ruWeekday := weekdayToRussian[menu.DeliveryDate.Weekday()]
 		title := "Меню на " + ruWeekday
 		c.JSON(200, gin.H{
 			"title": title,

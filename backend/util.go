@@ -46,25 +46,14 @@ func GetMinskHour() int {
 	return time.Now().In(time.FixedZone("Europe/Minsk", 3*60*60)).Hour()
 }
 
-func LocalizeWeekday(w time.Weekday) string {
-	ruWeekday := ""
-	switch w {
-	case time.Monday:
-		ruWeekday = "понедельник"
-	case time.Tuesday:
-		ruWeekday = "вторник"
-	case time.Wednesday:
-		ruWeekday = "среду"
-	case time.Thursday:
-		ruWeekday = "четверг"
-	case time.Friday:
-		ruWeekday = "пятницу"
-	case time.Saturday:
-		ruWeekday = "субботу"
-	default:
-		ruWeekday = "воскресенье"
-	}
-	return ruWeekday
+var weekdayToRussian = map[time.Weekday]string{
+	time.Monday:    "понедельник",
+	time.Tuesday:   "вторник",
+	time.Wednesday: "среду",
+	time.Thursday:  "четверг",
+	time.Friday:    "пятницу",
+	time.Saturday:  "субботу",
+	time.Sunday:    "воскресенье",
 }
 
 func Today() time.Time {

@@ -17,7 +17,6 @@ func main() {
 	cfg.AbbyyPassword = os.Getenv("ABBYY_PASSWORD")
 	dev := os.Getenv("ENV") == "DEV"
 
-	InitDb()
 	go RunWeb(dev)
 	RunBot(cfg)
 }

@@ -32,13 +32,13 @@ type Configuration struct {
 var (
 	bot      *tele.Bot
 	cfg      *Configuration
-	menuDate = time.Now()
+	menuDate = Today().Add(24 * time.Hour)
 )
 
 func onRects(c tele.Context) error {
 	payload := c.Message().Payload
 	if payload == "" {
-		currentRects, err := GetRects()
+		currentRects, err := ReadRects()
 		if err != nil {
 			log.Println("GetRects failed", err)
 			currentRects = make([]ocr.FloatRect, 0)
@@ -54,11 +54,10 @@ func onRects(c tele.Context) error {
 	if len(rects) == 0 {
 		return c.Send("uri contains no rects")
 	}
-	rectsJson, err := json.Marshal(rects)
-	if err != nil {
-		return c.Send("rects marshall failed")
+	if err := SaveRects(rects); err != nil {
+		log.Println("saving rects failed")
+		return c.Send("error while sending")
 	}
-	SaveRects(string(rectsJson))
 	return c.Send("ok")
 }
 
@@ -83,7 +82,7 @@ func onPhoto(c tele.Context) error {
 		return err
 	}
 
-	rects, err := GetRects()
+	rects, err := ReadRects()
 	if err != nil {
 		_, err = bot.Send(&tele.Chat{
 			ID: cfg.AdminId,
@@ -111,7 +110,10 @@ func onPhoto(c tele.Context) error {
 		DeliveryDate: menuDate,
 	}
 
-	SaveMenu(menu)
+	if err := SaveMenu(menu); err != nil {
+		log.Println("menu saving failed: ", err)
+		return err
+	}
 	authButton := tele.InlineButton{
 		Text: "Создать заказ",
 		Login: &tele.Login{
@@ -192,7 +194,7 @@ func PostOrderInChat(order OrderRequest) error {
 func onMenu(c tele.Context) error {
 	today := Today()
 	if c.Message().Payload == "" {
-		menu, err := GetMenu(today)
+		menu, err := GetMenu()
 		if err != nil {
 			return c.Send("menu not found")
 		}
@@ -214,11 +216,14 @@ func onMenu(c tele.Context) error {
 	if menuDate.Before(tomorrow) {
 		menuDate = tomorrow
 	}
-	SaveMenu(Menu{
+	err = SaveMenu(Menu{
 		Items:        string(linesJson),
 		PublishDate:  today,
 		DeliveryDate: menuDate,
 	})
+	if err != nil {
+		return c.Send("menu saving failed")
+	}
 	return c.Send(fmt.Sprintf("Save %d items", len(lines)))
 }
 
@@ -228,7 +233,7 @@ func RunBot(config Configuration) {
 		Poller: &tele.LongPoller{Timeout: 10 * time.Second},
 	})
 	if err != nil {
-		log.Fatal("bot creation failed", err)
+		log.Fatal("bot creation failed: ", err)
 		return
 	}
 	cfg = &config

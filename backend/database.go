@@ -2,82 +2,69 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"log"
+	"os"
 	"time"
 	"yummy-bot/ocr"
-
-	"gorm.io/driver/sqlite"
-	"gorm.io/gorm"
-	"gorm.io/gorm/clause"
 )
 
-const (
-	dbPath   = "data/db.sqlite3"
-	rectsKey = "rects"
-)
+const rectsFilePath = "data/rects.json"
+const menuFilePath = "data/menu.json"
 
 type Menu struct {
-	PublishDate  time.Time `gorm:"primary_key"`
-	DeliveryDate time.Time
-	Items        string
+	PublishDate  time.Time `json:"publish_date"`
+	DeliveryDate time.Time `json:"delivery_date"`
+	Items        string    `json:"items"`
 }
 
-type KeyValue struct {
-	Key   string `gorm:"primarykey"`
-	Value string
+func readObject[T any](v T, path string) error {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return err
+	}
+	return json.Unmarshal(data, v)
 }
 
-var Db *gorm.DB
-
-func InitDb() {
-	if db, err := gorm.Open(sqlite.Open(dbPath), &gorm.Config{}); err != nil {
-		log.Fatal(err)
-		return
-	} else {
-		Db = db
+func writeObject[T any](v T, path string) error {
+	f, err := os.Create(path)
+	defer func(f *os.File) {
+		if err := f.Close(); err != nil {
+			log.Println("error while closing file: ", err)
+		}
+	}(f)
+	if err != nil {
+		return err
 	}
-
-	if err := Db.AutoMigrate(&Menu{}); err != nil {
-		log.Fatal("Menu table migration failed", err)
-		return
+	data, err := json.Marshal(v)
+	if err != nil {
+		return err
 	}
-	if err := Db.AutoMigrate(&KeyValue{}); err != nil {
-		log.Fatal("KeyValue table migration failed")
-		return
-	}
+	_, err = f.Write(data)
+	return err
 }
 
-func GetRects() ([]ocr.FloatRect, error) {
-	var kv KeyValue
-	Db.Find(&kv, "key = ?", rectsKey)
+func ReadRects() ([]ocr.FloatRect, error) {
 	var rects []ocr.FloatRect
-	if err := json.Unmarshal([]byte(kv.Value), &rects); err != nil {
-		return nil, err
-	}
-	return rects, nil
+	err := readObject(&rects, rectsFilePath)
+	return rects, err
 }
 
-func SaveRects(rects string) {
-	Db.Clauses(clause.OnConflict{
-		Columns:   []clause.Column{{Name: "key"}},
-		DoUpdates: clause.AssignmentColumns([]string{"value"}),
-	}).Create(&KeyValue{
-		Key:   rectsKey,
-		Value: rects,
-	})
+func SaveRects(rects []ocr.FloatRect) error {
+	return writeObject(rects, rectsFilePath)
 }
 
-func SaveMenu(menu Menu) {
-	Db.Clauses(clause.OnConflict{
-		Columns:   []clause.Column{{Name: "publish_date"}},
-		DoUpdates: clause.AssignmentColumns([]string{"items", "delivery_date"}),
-	}).Create(&menu)
+func SaveMenu(menu Menu) error {
+	return writeObject(menu, menuFilePath)
 }
 
-func GetMenu(date time.Time) (Menu, error) {
+func GetMenu() (Menu, error) {
 	var menu Menu
-	if err := Db.Where("publish_date = ?", date).First(&menu).Error; err != nil {
+	if err := readObject(&menu, menuFilePath); err != nil {
 		return menu, err
+	}
+	if Today() != menu.PublishDate {
+		return Menu{}, errors.New("publish date is not today")
 	}
 	return menu, nil
 }
