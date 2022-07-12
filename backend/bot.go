@@ -4,7 +4,6 @@ import (
 	"crypto/hmac"
 	"crypto/sha256"
 	"encoding/hex"
-	"encoding/json"
 	"fmt"
 	"log"
 	"regexp"
@@ -32,7 +31,7 @@ type Configuration struct {
 var (
 	bot      *tele.Bot
 	cfg      *Configuration
-	menuDate = Today().Add(24 * time.Hour)
+	menuDate = Today()
 )
 
 func onRects(c tele.Context) error {
@@ -103,9 +102,8 @@ func onPhoto(c tele.Context) error {
 		menuDate = tomorrowDate
 	}
 
-	itemsJson, _ := json.Marshal(items)
 	menu := Menu{
-		Items:        string(itemsJson),
+		Items:        items,
 		PublishDate:  today,
 		DeliveryDate: menuDate,
 	}
@@ -198,26 +196,18 @@ func onMenu(c tele.Context) error {
 		if err != nil {
 			return c.Send("menu not found")
 		}
-		items := make([]string, 0)
-		if err := json.Unmarshal([]byte(menu.Items), &items); err != nil {
-			return c.Send("menu items json parsing failed")
-		}
-		text := "`/menu\n" + strings.Join(items, "\n") + "`"
+		text := "`/menu\n" + strings.Join(menu.Items, "\n") + "`"
 		return c.Send(text, &tele.SendOptions{
 			ParseMode: tele.ModeMarkdown,
 		})
 	}
 	lines := strings.Split(c.Message().Text, "\n")[1:]
-	linesJson, err := json.Marshal(lines)
-	if err != nil {
-		return c.Send("menu marshall failed")
-	}
 	tomorrow := today.AddDate(0, 0, 1)
 	if menuDate.Before(tomorrow) {
 		menuDate = tomorrow
 	}
-	err = SaveMenu(Menu{
-		Items:        string(linesJson),
+	err := SaveMenu(Menu{
+		Items:        lines,
 		PublishDate:  today,
 		DeliveryDate: menuDate,
 	})

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"log"
 
 	"github.com/gin-contrib/cors"
@@ -35,15 +34,9 @@ func RunWeb(dev bool) {
 	}
 	r.GET("/menu", func(c *gin.Context) {
 		menu, err := GetMenu()
-		if err != nil || menu.Items == "" {
+		if err != nil || len(menu.Items) == 0 {
 			log.Println("get menu failed", err)
 			c.JSON(404, gin.H{"error": "today's menu not found"})
-			return
-		}
-		var items = make([]string, 0)
-		if err := json.Unmarshal([]byte(menu.Items), &items); err != nil {
-			log.Println("menu items unmarshall failed")
-			c.JSON(500, gin.H{"error": err})
 			return
 		}
 
@@ -51,7 +44,7 @@ func RunWeb(dev bool) {
 		title := "Меню на " + ruWeekday
 		c.JSON(200, gin.H{
 			"title": title,
-			"items": items,
+			"items": menu.Items,
 		})
 	})
 

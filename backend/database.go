@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 	"os"
 	"time"
@@ -15,7 +14,7 @@ const menuFilePath = "data/menu.json"
 type Menu struct {
 	PublishDate  time.Time `json:"publish_date"`
 	DeliveryDate time.Time `json:"delivery_date"`
-	Items        string    `json:"items"`
+	Items        []string  `json:"items"`
 }
 
 func readObject[T any](v T, path string) error {
@@ -60,11 +59,6 @@ func SaveMenu(menu Menu) error {
 
 func GetMenu() (Menu, error) {
 	var menu Menu
-	if err := readObject(&menu, menuFilePath); err != nil {
-		return menu, err
-	}
-	if Today() != menu.PublishDate {
-		return Menu{}, errors.New("publish date is not today")
-	}
-	return menu, nil
+	err := readObject(&menu, menuFilePath)
+	return menu, err
 }
