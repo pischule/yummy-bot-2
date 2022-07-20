@@ -21,7 +21,7 @@ type Configuration struct {
 	TelegramToken string
 	AdminId       int64
 	GroupId       int64
-	YummyId       int64
+	YummyIds      []int64
 	Domain        string
 	OrderHourEnd  int
 	AbbyyUsername string
@@ -60,9 +60,18 @@ func onRects(c tele.Context) error {
 	return c.Send("ok")
 }
 
+func isYummyUser(senderId int64) bool {
+	for _, a := range cfg.YummyIds {
+		if a == senderId {
+			return true
+		}
+	}
+	return false
+}
+
 func onPhoto(c tele.Context) error {
 	senderId := c.Message().Sender.ID
-	if senderId != cfg.YummyId && senderId != cfg.AdminId {
+	if !isYummyUser(senderId) && senderId != cfg.AdminId {
 		return nil
 	}
 
@@ -133,7 +142,7 @@ func onPhoto(c tele.Context) error {
 
 func onText(c tele.Context) error {
 	senderId := c.Message().Sender.ID
-	if senderId != cfg.YummyId && senderId != cfg.AdminId {
+	if !isYummyUser(senderId) && senderId != cfg.AdminId {
 		return nil
 	}
 
@@ -229,8 +238,12 @@ func RunBot(config Configuration) {
 	cfg = &config
 	bot = b
 
+	allAdminUserIds := make([]int64, 0, len(config.YummyIds)+1)
+	allAdminUserIds = append(allAdminUserIds, config.AdminId)
+	allAdminUserIds = append(allAdminUserIds, config.YummyIds...)
+
 	adminOnly := b.Group()
-	adminOnly.Use(middleware.Whitelist(config.AdminId, config.YummyId))
+	adminOnly.Use(middleware.Whitelist(allAdminUserIds...))
 	adminOnly.Handle("/rects", onRects)
 	adminOnly.Handle("/menu", onMenu)
 
