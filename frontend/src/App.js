@@ -44,40 +44,13 @@ function App() {
 
   const pickRandom = () => {
     setItems((prevItems) => {
-      const updatedItems = prevItems.map((item) => {
-        item.quantity = 0;
-        return item;
-      });
-
-      if (prevItems.length < 10) {
-        for (let i = 0; i < 2; i++) {
-          const randomIndex = Math.floor(Math.random() * prevItems.length);
-          updatedItems[randomIndex].quantity = 1;
-        }
-        return updatedItems;
+      let notSelected = prevItems.filter((itm) => itm.quantity === 0);
+      if (notSelected.length === 0) {
+        notSelected = prevItems;
       }
-
-      const soupsStartIndex = 0;
-      const garnishesStartIndex = 4;
-      const secondDishesStartIndex = prevItems.length - 6;
-
-      const randomSoupIndex =
-        Math.floor(Math.random() * (garnishesStartIndex - soupsStartIndex)) +
-        soupsStartIndex;
-      const randomGarnishIndex =
-        Math.floor(
-          Math.random() * (secondDishesStartIndex - garnishesStartIndex)
-        ) + garnishesStartIndex;
-      const randomSecondDishIndex =
-        Math.floor(
-          Math.random() * (prevItems.length - secondDishesStartIndex - 1)
-        ) + secondDishesStartIndex;
-
-      updatedItems[randomSoupIndex].quantity = 1;
-      updatedItems[randomGarnishIndex].quantity = 1;
-      updatedItems[randomSecondDishIndex].quantity = 1;
-
-      return updatedItems;
+      let randomIndex = Math.floor(Math.random() * notSelected.length);
+      let randomId = notSelected[randomIndex].id;
+      return prevItems.map((itm) => itm.id === randomId ? ({...itm, quantity: itm.quantity + 1}) : ({...itm}));
     });
   };
 
