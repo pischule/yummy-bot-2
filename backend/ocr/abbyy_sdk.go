@@ -103,7 +103,7 @@ func (t *taskStruct) isActive() bool {
 
 func processImage(imageReader io.Reader, username string, password string) (taskStruct, error) {
 	log.Println("processImage")
-	url := "https://cloud-eu.ocrsdk.com/processImage?language=Russian&exportFormat=xml"
+	url := "https://cloud-eu.ocrsdk.com/processImage?language=Russian&exportFormat=xml&profile=textExtraction"
 	method := "POST"
 
 	client := &http.Client{}
