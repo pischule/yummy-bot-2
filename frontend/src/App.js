@@ -15,7 +15,14 @@ function App() {
   const [error, setError] = useState();
 
   async function fetchData() {
-    const result = await fetch(`${process.env.REACT_APP_API_URL}/menu`);
+    const result = await fetch(`${process.env.REACT_APP_API_URL}/menu${window.location.search}`);
+    if (result.status === 404) {
+      return;
+    }
+    if (result.status === 403) {
+      setTitle('Ошибка авторизации');
+      return;
+    }
     const json = await result.json();
     let currentId = 0;
     const itemsWithQuantity = json.items.map((item) => {

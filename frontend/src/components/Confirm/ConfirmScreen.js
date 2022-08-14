@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
 import styles from "./ConfirmScreen.module.css";
 
@@ -6,6 +7,7 @@ import LargeButton from "../UI/LargeButton";
 import Card from "../UI/Card";
 
 function ConfirmScreen(props) {
+  const [idempotencyKey] = useState(nanoid());
   const [name, setName] = useState(localStorage.getItem("name") || null);
   const [pressed, setPressed] = useState(false);
 
@@ -57,10 +59,11 @@ function ConfirmScreen(props) {
         .sort()
         .join("\n");
 
-      fetch(`${process.env.REACT_APP_API_URL}/order`, {
+      fetch(`${process.env.REACT_APP_API_URL}/order${window.location.search}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Idempotency-Key": idempotencyKey,
         },
         body: JSON.stringify({
           userId: id,
